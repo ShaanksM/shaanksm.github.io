@@ -3,22 +3,31 @@
 #identifier = "home"
 #name = "Home"
 #url = "/"
+
 #[main.params]
-#icon = "home"
+#icon = "shnks.png"
 #newtab = true
 
 [[social]]
 identifier = "github"
 name = "GitHub"
-url = "https://github.com/CaiJimmy/hugo-theme-stack"
+url = "https://github.com/ShaanksM"
 
 [social.params]
 icon = "brand-github"
 
 [[social]]
-identifier = "twitter"
-name = "Twitter"
-url = "https://twitter.com"
+identifier = "hack the box"
+name = "Hack The Box"
+url = "https://app.hackthebox.com/profile/382091"
 
 [social.params]
-icon = "brand-twitter"
+icon = "hackthebox"
+
+[[social]]
+identifier = "Root Me"
+name = "Root Me"
+url = "https://www.root-me.org/0xShaanks?lang=fr#8403af773d506c0b99723cabb030ab8f"
+
+[social.params]
+icon = "rootme"
