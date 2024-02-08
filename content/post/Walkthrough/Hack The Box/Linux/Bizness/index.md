@@ -3,28 +3,27 @@ title: Bizness Writeup
 description: Navigate the twists of a digital jungle where vulnerabilities in Apache OFBiz become the playing field for this suit-clad simian's clever escapades
 slug: Bizness Writeup
 date: 2024-01-24 00:00:00+0000
-image: cover.jpg
+image: intro.png
 categories:
     - Hack The Box
-image: coverBIZNESS.png
+    - Linux
+image: cover.png
 weight: 2       # You can add weight to some posts to override the default sorting (date descending)
 ---
 
 # BIZNESS HTB - WRITEUP
   
-
-  
-
+![introduction](cover.png) 
  
 ## Introduction
 
 " Bizness", released on January 6, 2024, is a challenging machine on Hack The Box. It highlights a critical CVE in Apache OFBiz, allowing for command injection and potential Remote Code Execution (RCE), along with a pathway for Server-Side Request Forgery (SSRF). The machine extends its complexity by requiring participants to navigate through diverse folders, extract spear information, and employ configuration analysis to crack passwords for privilege escalation. Engaging with "Bizness" offers a hands-on experience in identifying and exploiting vulnerabilities while emphasizing the importance of effective privilege escalation techniques.
 
-![](/intro.png) 
+
 
 ## Matrix
 
-![Matrix's Box](/shaanksm.github.io/content/post/Walkthrough/Hack%20The%20Box/Linux/Bizness/Bizness_Pic/matrix.png)
+![Matrix's Box](Bizness_Pic/matrix.png)
 
 
 ## Enumeration
@@ -70,13 +69,13 @@ Leveraging this phase, I meticulously list directories and explore the site conc
 It's during this exploration that I pinpoint the "accounting" directory, which appears to be the most promising starting point.
 
 
-![Dirsearch enumeration](/shaanksm.github.io/content/post/Walkthrough/Hack%20The%20Box/Linux/Bizness/Bizness_Pic/sc1.png) 
+![Dirsearch enumeration](Bizness_Pic/sc1.png) 
  
 
 Upon closer examination, I stumble upon an authentication page utilizing the Apache OFBiz framework, with a version susceptible to two CVEs. \
 The one that catches my eye is ***CVE-2023-51467***, which I exploit to secure an initial foothold on the server.
 
-![Image 1](/shaanksm.github.io/content/post/Walkthrough/Hack%20The%20Box/Linux/Bizness/Bizness_Pic/webofbiz.png) 
+![Web page Apache](Bizness_Pic/webofbiz.png) 
 
 Bellow the result's whatweb 
 
@@ -183,11 +182,11 @@ https://www.youtube.com/watch?v=DuLzg6U25VM&ab_channel=%C3%81kosJakab
 
 
 
-![Exploitation CVE-2023-51467 ](/shaanksm.github.io/content/post/Walkthrough/Hack%20The%20Box/Linux/Bizness/Bizness_Pic/sc3.png)
+![Exploitation CVE-2023-51467 ](Bizness_Pic/sc3.png)
 
 Go to stabilize the shell and go ahead this machine
 
-![Image 1](/shaanksm.github.io/content/post/Walkthrough/Hack%20The%20Box/Linux/Bizness/Bizness_Pic/sc4.png)
+![Shell Stabilized](Bizness_Pic/sc4.png)
 
 
 
@@ -299,7 +298,7 @@ sudo su
 
 Voila !
 
-![Image 1](/shaanksm.github.io/content/post/Walkthrough/Hack%20The%20Box/Linux/Bizness/Bizness_Pic/root.png)
+![Root flag](Bizness_Pic/root.png)
 
 
 This intricate process showcases the meticulous steps taken to navigate through files, directories, and databases, employing various commands to unveil crucial information and execute a successful privilege escalation.
@@ -307,4 +306,4 @@ This intricate process showcases the meticulous steps taken to navigate through 
 
 ## Done
 
-![Image 1](/shaanksm.github.io/content/post/Walkthrough/Hack%20The%20Box/Linux/Bizness/Bizness_Pic/done.png) 
+![The Ebd](Bizness_Pic/done.png) 

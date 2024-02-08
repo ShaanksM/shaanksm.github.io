@@ -24,15 +24,16 @@ Let me tell you, the OSCP exam isn't a leisurely stroll in the tech park; it's m
 - Note that OSCP is not necessarily web to get your first foothold, as there is (perhaps) some buffer over flow (BOF).\
 *this certification isn't the easiest, but it's ***not the hardest*** either*
 
-# Back to the Educational Arena:
+### Back to the Educational Arena:
 
-I initiated my expedition by enrolling in an official course provided by Offensive Security (https://www.twitch.tv/offsecofficial) , the very architects of the OSCP exam. \
+I initiated my expedition by enrolling in an official course provided by Offensive Security (https://www.offsec.com/) , the very architects of the OSCP exam. \
 Their website, Offensive Security, became my primary reservoir of knowledge. 
 
 This course served as my golden ticket, unlocking the enigmas of the exam. It laid the crucial foundation and furnished me with the fundamental knowledge essential to tackle the more intricate challenges that lay ahead.
 
 
-![yh.. i need to rush exercices quickly](portal.png)
+![Macro view of material content](portal.png)
+
 
 ![Material Challenge Lab](chall.png)
 
@@ -42,7 +43,7 @@ Upon enrolling in the course, you will gain access to the comprehensive OSCP stu
 
 The labs consist of 6 machines; in my perspective, 3 of them pose a greater challenge than the OSCP exam, while the remaining 3 closely mirror the exam's configuration, albeit with slightly distinct methodologies.
 
-# Exam Structure and Strategy : 
+### Exam Structure and Strategy : 
 
 The exam structure is as follows:
 
@@ -52,7 +53,7 @@ Within these machines, 10 points are allocated for the low privilege 'local.txt'
 ![](scenario.png)
 
 
-# Resources Utilized:
+### Resources Utilized:
 
 (Currently) I invested in a Hack The Box VIP membership and successfully tackled approximately 30 machines—3 Windows and 27 Linux. \
 Whenever I encountered challenges in solving a specific machine, I sought guidance from IppSec's walkthrough videos. \
@@ -65,11 +66,14 @@ Regularly integrating IppSec's walkthrough videos into my routine, I chose to ut
 
 - HACK THE BOX\
 *HTB's medium machines are about the same level as OSCP, sometimes even harder.*
+https://app.hackthebox.com/starting-point
 
-- IPPSEC
+- IPPSEC : https://www.youtube.com/@ippsec
+
+- Tib3rius : https://www.youtube.com/@Tib3rius
 
 
-#### My Exam Toolkit:
+### My Exam ('current') Toolkit:
 
 Prior to the exam, I configured a new Kali Linux virtual machine, installing all the necessary tools anticipated for the exam (Later i'ld like to configure my own pentest environnement from a Mac OS for exemple of Ubuntu). 
 
@@ -91,20 +95,46 @@ https://github.com/nicocha30/ligolo-ng
 
 John Hammond :https://www.youtube.com/watch?v=qou7shRlX_s 
 
-# Perseverance:
+#### Perseverance:
 
 Now, let's address the most crucial aspect: perseverance. It's imperative that you never, and I mean never, give up—before, during, or even after the exam, regardless of the outcome. The OSCP exam itself may not be inherently difficult, and what often leads to people failing is not the exam's complexity but rather their mindset and psychological preparedness. Success hinges on how you approach and maintain determination throughout the exam.
 
+    
 
-# The Exam Day:
+### board diary : 
+
+#### Week1-2 : 
+
+
+I've completed 40% of the course material, and my aim is to finish 80% of the exercises within the next 30 days, if not sooner. This will leave me with a full 60 days to tackle as many machines as possible, excluding HTB machines.
+
+Considering there are approximately 30 machines on HTB and none on the Offsec platform on my case, it would be beneficial to aim for at least 30 machines on Offsec and around 70 on Hack The Box, including both Linux and Windows machines rated as easy and medium difficulty.
+
+In the meantime, I'm actively job hunting as I've been unemployed since the end of my sandwich course, and it's already February 2024, so I sometimes take breaks to apply 
+
+I initially started with the SQLI course, expecting it to be easier than it turned out to be. \
+Unfortunately, after spending nearly 5 hours and 45 minutes on the same exercise, I found myself with a sore back and tired eyes. While I know I should take breaks, once I'm immersed in a task, it's hard for me to step away.
+
+
+#### Week 2-3 : 
+
+
+
+### Result Month 1 : 
+
+
+
+
+### The Exam Day:
 
 Im not yet but hope soon !
+(Already planned)
 
 
-# The result
+### The result
 
-Result & feel + tips at at exam day (sleep, eat, ect)
+draft : Result & feel + tips at at exam day (sleep, eat, ect)
 
-# What's next ?
+### What's next ?
 
-(next certification goal / next target)
+draft : (next certification goal / next target)
