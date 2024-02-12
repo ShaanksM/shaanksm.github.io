@@ -34,7 +34,6 @@ This course served as my golden ticket, unlocking the enigmas of the exam. It la
 
 ![Macro view of material content](portal.png)
 
-
 ![Material Challenge Lab](chall.png)
 
 # What's Included with Registration:
@@ -99,9 +98,9 @@ John Hammond :https://www.youtube.com/watch?v=qou7shRlX_s
 
 Now, let's address the most crucial aspect: perseverance. It's imperative that you never, and I mean never, give up—before, during, or even after the exam, regardless of the outcome. The OSCP exam itself may not be inherently difficult, and what often leads to people failing is not the exam's complexity but rather their mindset and psychological preparedness. Success hinges on how you approach and maintain determination throughout the exam.
 
-    
 
-### board diary : 
+
+### Board Diary : 
 
 #### Week1-2 : 
 

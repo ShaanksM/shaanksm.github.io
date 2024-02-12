@@ -172,7 +172,7 @@ HTTP Headers:
 ```
 
 
-## First FootHold ?
+## FootHold ?
 
 I used this repo from GH to bet a foothold \
 `https://github.com/jakabakos/Apache-OFBiz-Authentication-Bypass`
