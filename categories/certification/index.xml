@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Certification on ShaanksFR Blog</title><link>https://shaanksm.github.io/categories/certification/</link><description>Recent content in Certification on ShaanksFR Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://shaanksm.github.io/categories/certification/index.xml" rel="self" type="application/rss+xml"/><item><title>My (ongoing) OSCP Jouney !</title><link>https://shaanksm.github.io/p/certification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://shaanksm.github.io/p/certification/</guid><description>&lt;img src="https://shaanksm.github.io/p/certification/offsec.png" alt="Featured image of post My (ongoing) OSCP Jouney !" />&lt;p>Greetings, pal! I&amp;rsquo;m Shaanks, holder of a Master&amp;rsquo;s Degree in EPITA (Computer Engineer School) with 3 years of &amp;ldquo;alternance&amp;rdquo; (alternating half time school-company - french system), and I&amp;rsquo;m eager to recount my experiences with you.
+Here&amp;rsquo;s the lowdown: This marks the inception of my inaugural blog, and I&amp;rsquo;m delighted to commence it with the narrative of my triumphant journey through the OSCP (Offensive Security Certified Professional) certification.&lt;/p>
+&lt;p>I&amp;rsquo;ve been immersing myself in the captivating realm of cybersecurity solo for approximately some years. And the thrilling part? I (will) conquered the OSCP, so why don&amp;rsquo;t write my rush board ?&lt;/p>
+&lt;p>A Journey of Cyber-Excitement 🤪 &amp;raquo;&lt;/p>
+&lt;p>Let me tell you, the OSCP exam isn&amp;rsquo;t a leisurely stroll in the tech park; it&amp;rsquo;s more like a roller coaster in the land of hackers, filled with twists and turns involving breaking into systems and assuming the role of a digital hero. While some may take an eternity to prepare, I opted to expedite my journey.\&lt;/p>
+&lt;ul>
+&lt;li>Note that OSCP is not necessarily web to get your first foothold, as there is (perhaps) some buffer over flow (BOF).&lt;br>
+&lt;em>this certification isn&amp;rsquo;t the easiest, but it&amp;rsquo;s &lt;em>&lt;strong>not the hardest&lt;/strong>&lt;/em> either&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;h3 id="back-to-the-educational-arena">Back to the Educational Arena:&lt;/h3>
+&lt;p>I initiated my expedition by enrolling in an official course provided by Offensive Security (&lt;a class="link" href="https://www.offsec.com/" target="_blank" rel="noopener"
+>https://www.offsec.com/&lt;/a>) , the very architects of the OSCP exam. &lt;br>
+Their website, Offensive Security, became my primary reservoir of knowledge.&lt;/p>
+&lt;p>This course served as my golden ticket, unlocking the enigmas of the exam. It laid the crucial foundation and furnished me with the fundamental knowledge essential to tackle the more intricate challenges that lay ahead.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/certification/portal.png"
+width="1897"
+height="772"
+srcset="https://shaanksm.github.io/p/certification/portal_hu86249b7e6270d0667e1b9fb676401572_107770_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/certification/portal_hu86249b7e6270d0667e1b9fb676401572_107770_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Macro view of material content"
+class="gallery-image"
+data-flex-grow="245"
+data-flex-basis="589px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/certification/chall.png"
+width="701"
+height="671"
+srcset="https://shaanksm.github.io/p/certification/chall_hu0b9dacc5dd84c2c37301988ba37179be_111064_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/certification/chall_hu0b9dacc5dd84c2c37301988ba37179be_111064_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Material Challenge Lab"
+class="gallery-image"
+data-flex-grow="104"
+data-flex-basis="250px"
+>&lt;/p>
+&lt;h1 id="whats-included-with-registration">What&amp;rsquo;s Included with Registration:&lt;/h1>
+&lt;p>Upon enrolling in the course, you will gain access to the comprehensive OSCP study materials and a 3-month lab subscription. This package encompasses downloadable resources like videos and PDFs for your learning and future reference.&lt;/p>
+&lt;p>The labs consist of 6 machines; in my perspective, 3 of them pose a greater challenge than the OSCP exam, while the remaining 3 closely mirror the exam&amp;rsquo;s configuration, albeit with slightly distinct methodologies.&lt;/p>
+&lt;h3 id="exam-structure-and-strategy-">Exam Structure and Strategy :&lt;/h3>
+&lt;p>The exam structure is as follows:&lt;/p>
+&lt;p>To succeed in the OSCP exam, you must navigate through a structured evaluation. The exam comprises one Active Directory Domain, accounting for 40 points, and three standalone machines, each carrying a value of 20 points. &lt;br>
+Within these machines, 10 points are allocated for the low privilege &amp;rsquo;local.txt&amp;rsquo; and an additional 10 points for the root/Administrator &amp;lsquo;proof.txt&amp;rsquo;. To meet the passing criteria, your main objective is to successfully conquer the Active Directory and at least one standalone machine, thereby earning an additional 10 Bonus Points.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/certification/scenario.png"
+width="1480"
+height="504"
+srcset="https://shaanksm.github.io/p/certification/scenario_hu17ca57281295f45120f179e920914d5f_293346_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/certification/scenario_hu17ca57281295f45120f179e920914d5f_293346_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="293"
+data-flex-basis="704px"
+>&lt;/p>
+&lt;h3 id="resources-utilized">Resources Utilized:&lt;/h3>
+&lt;p>(Currently) I invested in a Hack The Box VIP membership and successfully tackled approximately 30 machines—3 Windows and 27 Linux. &lt;br>
+Whenever I encountered challenges in solving a specific machine, I sought guidance from IppSec&amp;rsquo;s walkthrough videos. &lt;br>
+Even after independently solving a machine, I made it a routine to watch IppSec&amp;rsquo;s demonstrations and explanations, enhancing my comprehension and acquiring new methodologies. &lt;br>
+Regularly integrating IppSec&amp;rsquo;s walkthrough videos into my routine, I chose to utilize my pre-sleep time for educational purposes, opting for valuable insights and knowledge from IppSec&amp;rsquo;s machine-solving sessions instead of scrolling through TikTok or consuming less educational content.&lt;/p>
+&lt;h3 id="essential-resources-for-success">Essential Resources for Success:&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>OSCP Material and Challenge Labs (logic..)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>HACK THE BOX&lt;br>
+&lt;em>HTB&amp;rsquo;s medium machines are about the same level as OSCP, sometimes even harder.&lt;/em>
+&lt;a class="link" href="https://app.hackthebox.com/starting-point" target="_blank" rel="noopener"
+>https://app.hackthebox.com/starting-point&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>IPPSEC : &lt;a class="link" href="https://www.youtube.com/@ippsec" target="_blank" rel="noopener"
+>https://www.youtube.com/@ippsec&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tib3rius : &lt;a class="link" href="https://www.youtube.com/@Tib3rius" target="_blank" rel="noopener"
+>https://www.youtube.com/@Tib3rius&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="my-exam-current-toolkit">My Exam (&amp;lsquo;current&amp;rsquo;) Toolkit:&lt;/h3>
+&lt;p>Prior to the exam, I configured a new Kali Linux virtual machine, installing all the necessary tools anticipated for the exam (Later i&amp;rsquo;ld like to configure my own pentest environnement from a Mac OS for exemple of Ubuntu).&lt;/p>
+&lt;p>This toolkit included utilities like Ligolo (You can find my explanation of the Ligolo tool above), &lt;br>
+Impacket tools (Mandatory for Windows environnment), &lt;br>
+Autorecon (thx Tib3rius) &lt;br>
+Mimikatz, and others. As a precaution, I captured a screenshot of my setup, ensuring readiness in case any issues arose with the VM during the exam.&lt;/p>
+&lt;h4 id="ligolo-ng">Ligolo-ng:&lt;/h4>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/certification/pivot.png"
+width="451"
+height="214"
+srcset="https://shaanksm.github.io/p/certification/pivot_hucd1074605ad0e2ef70c251832da073ea_155112_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/certification/pivot_hucd1074605ad0e2ef70c251832da073ea_155112_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Pivoting illustration"
+class="gallery-image"
+data-flex-grow="210"
+data-flex-basis="505px"
+>&lt;/p>
+&lt;p>Before delving back into the blog, let&amp;rsquo;s take a moment to discuss Ligolo. Ligolo is an invaluable tool for pivoting and tunneling, streamlining the process by creating a tunnel similar to a VPN. With Ligolo, ther there&amp;rsquo;s no need for additional tools like proxy chains to perform attacks on the target. &lt;br>
+Its simplicity and effectiveness proved to be immensely helpful during my exam, and I&amp;rsquo;m confident it can be of assistance to you as well. &lt;br>
+I plan to create a comprehensive demonstration on effectively using Ligolo, showcasing not just double, but triple and even quadruple pivoting with it.&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/nicocha30/ligolo-ng" target="_blank" rel="noopener"
+>https://github.com/nicocha30/ligolo-ng&lt;/a>&lt;/p>
+&lt;p>John Hammond :https://www.youtube.com/watch?v=qou7shRlX_s&lt;/p>
+&lt;h4 id="perseverance">Perseverance:&lt;/h4>
+&lt;p>Now, let&amp;rsquo;s address the most crucial aspect: perseverance. It&amp;rsquo;s imperative that you never, and I mean never, give up—before, during, or even after the exam, regardless of the outcome. The OSCP exam itself may not be inherently difficult, and what often leads to people failing is not the exam&amp;rsquo;s complexity but rather their mindset and psychological preparedness. Success hinges on how you approach and maintain determination throughout the exam.&lt;/p>
+&lt;h3 id="board-diary-">Board Diary :&lt;/h3>
+&lt;h4 id="week1-2-">Week1-2 :&lt;/h4>
+&lt;p>I&amp;rsquo;ve completed 40% of the course material, and my aim is to finish 80% of the exercises within the next 30 days, if not sooner. This will leave me with a full 60 days to tackle as many machines as possible, excluding HTB machines.&lt;/p>
+&lt;p>Considering there are approximately 30 machines on HTB and none on the Offsec platform on my case, it would be beneficial to aim for at least 30 machines on Offsec and around 70 on Hack The Box, including both Linux and Windows machines rated as easy and medium difficulty.&lt;/p>
+&lt;p>In the meantime, I&amp;rsquo;m actively job hunting as I&amp;rsquo;ve been unemployed since the end of my sandwich course, and it&amp;rsquo;s already February 2024, so I sometimes take breaks to apply&lt;/p>
+&lt;p>I initially started with the SQLI course, expecting it to be easier than it turned out to be. &lt;br>
+Unfortunately, after spending nearly 5 hours and 45 minutes on the same exercise, I found myself with a sore back and tired eyes. While I know I should take breaks, once I&amp;rsquo;m immersed in a task, it&amp;rsquo;s hard for me to step away.&lt;/p>
+&lt;h4 id="week-2-3-">Week 2-3 :&lt;/h4>
+&lt;h3 id="result-month-1-">Result Month 1 :&lt;/h3>
+&lt;h3 id="the-exam-day">The Exam Day:&lt;/h3>
+&lt;p>Im not yet but hope soon !
+(Already planned)&lt;/p>
+&lt;h3 id="the-result">The result&lt;/h3>
+&lt;p>draft : Result &amp;amp; feel + tips at at exam day (sleep, eat, ect)&lt;/p>
+&lt;h3 id="whats-next-">What&amp;rsquo;s next ?&lt;/h3>
+&lt;p>draft : (next certification goal / next target)&lt;/p></description></item></channel></rss>

