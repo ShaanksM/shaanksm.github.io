@@ -13,6 +13,7 @@ weight: 1       # You can add weight to some posts to override the default sorti
 
 
 
+
 Greetings, pal! I'm Shaanks, holder of a Master's Degree in EPITA (Computer Engineer School) with 3 years of "alternance" (alternating half time school-company - french system), and I'm eager to recount my experiences with you. 
 Here's the lowdown: This marks the inception of my inaugural blog, and I'm delighted to commence it with the narrative of my triumphant journey through the OSCP (Offensive Security Certified Professional) certification. 
 
